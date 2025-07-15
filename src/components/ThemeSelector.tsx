@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Palette, Waves, Sun, Mountain, TreePine, Tent } from 'lucide-react';
+import { Palette, Waves, Sun, Mountain, TreePine, Tent, MonitorSpeaker, Flower2, Leaf } from 'lucide-react';
 
 export const ThemeSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +13,18 @@ export const ThemeSelector = () => {
     { name: 'beach', label: 'Beach', icon: <Sun className="h-4 w-4" />, className: 'theme-beach' },
     { name: 'mountain', label: 'Mountain', icon: <Mountain className="h-4 w-4" />, className: 'theme-mountain' },
     { name: 'camping', label: 'Camping', icon: <Tent className="h-4 w-4" />, className: 'theme-camping' },
-    { name: 'forest', label: 'Forest', icon: <TreePine className="h-4 w-4" />, className: 'theme-forest' }
+    { name: 'forest', label: 'Forest', icon: <TreePine className="h-4 w-4" />, className: 'theme-forest' },
+    { name: 'modern-blue', label: 'Modern Blue', icon: <MonitorSpeaker className="h-4 w-4" />, className: 'theme-modern-blue' },
+    { name: 'pastel', label: 'Pastel', icon: <Flower2 className="h-4 w-4" />, className: 'theme-pastel' },
+    { name: 'green', label: 'Green', icon: <Leaf className="h-4 w-4" />, className: 'theme-green' }
   ];
 
   const handleThemeChange = (themeClassName: string) => {
     // Remove all theme classes
-    document.body.classList.remove('theme-sea', 'theme-beach', 'theme-mountain', 'theme-camping', 'theme-forest');
+    const allThemeClasses = ['theme-sea', 'theme-beach', 'theme-mountain', 'theme-camping', 'theme-forest', 'theme-modern-blue', 'theme-pastel', 'theme-green'];
+    allThemeClasses.forEach(className => {
+      document.body.classList.remove(className);
+    });
     
     // Add selected theme class
     if (themeClassName) {
@@ -40,7 +46,7 @@ export const ThemeSelector = () => {
       </Button>
       
       {isOpen && (
-        <Card className="absolute top-12 right-0 w-48 cute-border cute-shadow">
+        <Card className="absolute top-12 right-0 w-56 cute-border cute-shadow">
           <CardContent className="p-4">
             <h3 className="font-semibold mb-3 text-sm">Choose Theme</h3>
             <div className="grid grid-cols-2 gap-2">

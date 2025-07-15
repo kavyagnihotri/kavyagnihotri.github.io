@@ -110,30 +110,6 @@ export const Achievements = () => {
             </Card>
           ))}
         </div>
-
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4">Achievement Statistics</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">7+</div>
-                <div className="text-sm text-muted-foreground">Awards & Recognition</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">Top 3%</div>
-                <div className="text-sm text-muted-foreground">Competition Rankings</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">2</div>
-                <div className="text-sm text-muted-foreground">Prestigious Scholarships</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">5+</div>
-                <div className="text-sm text-muted-foreground">Years of Excellence</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
