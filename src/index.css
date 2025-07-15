@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -176,63 +177,6 @@
     --input: 120 20% 82%;
     --ring: 120 65% 45%;
   }
-
-  /* Modern Blue Theme */
-  .theme-modern-blue {
-    --background: 216 100% 98%;
-    --foreground: 216 85% 15%;
-    --card: 216 100% 96%;
-    --card-foreground: 216 85% 15%;
-    --primary: 216 65% 50%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 216 20% 85%;
-    --secondary-foreground: 216 85% 15%;
-    --muted: 216 20% 92%;
-    --muted-foreground: 216 15% 45%;
-    --accent: 216 20% 85%;
-    --accent-foreground: 216 85% 15%;
-    --border: 216 20% 82%;
-    --input: 216 20% 82%;
-    --ring: 216 65% 50%;
-  }
-
-  /* Pastel Theme */
-  .theme-pastel {
-    --background: 0 0% 99%;
-    --foreground: 0 0% 15%;
-    --card: 0 0% 97%;
-    --card-foreground: 0 0% 15%;
-    --primary: 180 35% 65%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 15% 92%;
-    --secondary-foreground: 0 0% 15%;
-    --muted: 0 15% 95%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 0 15% 92%;
-    --accent-foreground: 0 0% 15%;
-    --border: 0 15% 88%;
-    --input: 0 15% 88%;
-    --ring: 180 35% 65%;
-  }
-
-  /* Green Theme */
-  .theme-green {
-    --background: 120 40% 98%;
-    --foreground: 120 85% 15%;
-    --card: 120 40% 96%;
-    --card-foreground: 120 85% 15%;
-    --primary: 120 70% 45%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 120 25% 85%;
-    --secondary-foreground: 120 85% 15%;
-    --muted: 120 25% 92%;
-    --muted-foreground: 120 15% 45%;
-    --accent: 120 25% 85%;
-    --accent-foreground: 120 85% 15%;
-    --border: 120 25% 82%;
-    --input: 120 25% 82%;
-    --ring: 120 70% 45%;
-  }
 }
 
 @layer base {
@@ -273,4 +217,103 @@
   .cute-shadow {
     @apply shadow-lg shadow-primary/20;
   }
+}
+
+/* Theme-specific animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(5deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 4s ease-in-out 1s infinite;
+}
+
+.animate-float-delay-2 {
+  animation: float 5s ease-in-out 2s infinite;
+}
+
+.animate-float-delay-3 {
+  animation: float 6s ease-in-out 1.5s infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 4s ease-in-out infinite;
+}
+
+.animate-wave-delay {
+  animation: wave 4s ease-in-out 1s infinite;
+}
+
+.animate-wave-delay-2 {
+  animation: wave 5s ease-in-out 2s infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway 5s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: flicker 3s ease-in-out infinite;
+}
+
+.animate-flicker-delay {
+  animation: flicker 4s ease-in-out 1.5s infinite;
 }

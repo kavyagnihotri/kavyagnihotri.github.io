@@ -1,8 +1,8 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Palette, Waves, Sun, Mountain, TreePine, Tent, MonitorSpeaker, Flower2, Leaf } from 'lucide-react';
+import { Palette, Waves, Sun, Mountain, TreePine, Tent } from 'lucide-react';
 
 export const ThemeSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,15 +13,18 @@ export const ThemeSelector = () => {
     { name: 'beach', label: 'Beach', icon: <Sun className="h-4 w-4" />, className: 'theme-beach' },
     { name: 'mountain', label: 'Mountain', icon: <Mountain className="h-4 w-4" />, className: 'theme-mountain' },
     { name: 'camping', label: 'Camping', icon: <Tent className="h-4 w-4" />, className: 'theme-camping' },
-    { name: 'forest', label: 'Forest', icon: <TreePine className="h-4 w-4" />, className: 'theme-forest' },
-    { name: 'modern-blue', label: 'Modern Blue', icon: <MonitorSpeaker className="h-4 w-4" />, className: 'theme-modern-blue' },
-    { name: 'pastel', label: 'Pastel', icon: <Flower2 className="h-4 w-4" />, className: 'theme-pastel' },
-    { name: 'green', label: 'Green', icon: <Leaf className="h-4 w-4" />, className: 'theme-green' }
+    { name: 'forest', label: 'Forest', icon: <TreePine className="h-4 w-4" />, className: 'theme-forest' }
   ];
+
+  useEffect(() => {
+    // Pick a random theme on page load
+    const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+    handleThemeChange(randomTheme.className);
+  }, []);
 
   const handleThemeChange = (themeClassName: string) => {
     // Remove all theme classes
-    const allThemeClasses = ['theme-sea', 'theme-beach', 'theme-mountain', 'theme-camping', 'theme-forest', 'theme-modern-blue', 'theme-pastel', 'theme-green'];
+    const allThemeClasses = ['theme-sea', 'theme-beach', 'theme-mountain', 'theme-camping', 'theme-forest'];
     allThemeClasses.forEach(className => {
       document.body.classList.remove(className);
     });

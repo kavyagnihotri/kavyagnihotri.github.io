@@ -13,6 +13,7 @@ import { Volunteering } from '@/components/Volunteering';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ThemeSelector } from '@/components/ThemeSelector';
+import { ThemeDecorations } from '@/components/ThemeDecorations';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,6 +39,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ThemeDecorations />
       <ThemeSelector />
       <Header />
       <Hero />
