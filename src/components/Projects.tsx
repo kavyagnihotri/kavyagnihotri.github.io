@@ -1,97 +1,107 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Github, ExternalLink, Code, Brain, Database, Smartphone, Image, Search } from 'lucide-react';
+import { Code, Brain, Database, Search, Image, Cpu, Users } from 'lucide-react';
 
 export const Projects = () => {
   const projects = [
     {
-      title: 'Generating Lecture Notes',
-      description: 'AI-powered system that creates structured lecture notes by analyzing prerequisite knowledge graphs and optimizing content placement using advanced NLP techniques.',
-      icon: <Brain className="h-8 w-8" />,
-      technologies: ['Python', 'BeautifulSoup', 'PyTorch', 'BERT', 'LDA', 'NLP'],
+      title: 'ProSys - Project Management System',
+      description: 'MERN Stack Application for managing project proposals, applications, project approvals and submissions for admin, students, and professors.',
+      icon: <Database className="h-8 w-8" />,
+      technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'MERN Stack'],
       features: [
-        'Prerequisite knowledge graph analysis',
-        'Content optimization using LDA segmentation',
-        'Bagging techniques for improved accuracy',
-        'Automated note structure generation'
+        'Developed a web platform for managing project proposals, applications, project approvals and submissions for admin, students, and professors',
+        'Added functionality to grade students and chat'
       ],
-      category: 'AI/ML'
+      category: 'Full-stack',
+      timeline: 'January 2023 - April 2023'
     },
     {
-      title: 'ProSys - Project Management System',
-      description: 'Full-stack MERN application designed for comprehensive academic project management with advanced features for collaboration and assessment.',
-      icon: <Database className="h-8 w-8" />,
-      technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Socket.io', 'JWT'],
+      title: 'Generating Lecture Notes',
+      description: 'Python-based system that creates structured lecture notes using prerequisite knowledge graphs and advanced NLP techniques.',
+      icon: <Brain className="h-8 w-8" />,
+      technologies: ['Python', 'BeautifulSoup', 'PyTorch', 'BERT', 'SimpleTransformers', 'LDA'],
       features: [
-        'Real-time chat system for project collaboration',
-        'Advanced student grading and assessment tools',
-        'Proposal approval workflow management',
-        'Project timeline and milestone tracking'
+        'Created a Prerequisite Knowledge Graph via hub and authority scores to combine data on different topics to develop scientific lecture notes to understand a concept',
+        'Preprocessed the scraped data and fine-tuned a BERT model using SimpleTransformers to predict the optimal placement for images, pseudocodes, and formulas within the definition',
+        'Leveraging LDA segmentation and bagging techniques notably minimized bias, improving the depth and inclusivity of the lecture notes'
       ],
-      category: 'Full-stack'
+      category: 'AI/ML',
+      timeline: 'January 2023 - March 2024'
     },
     {
       title: 'Boolean Retrieval System & Page Ranking',
-      description: 'Sophisticated information retrieval system with advanced query processing and ranking algorithms for efficient document search and retrieval.',
+      description: 'Information retrieval system with advanced query processing and ranking algorithms for efficient document search.',
       icon: <Search className="h-8 w-8" />,
-      technologies: ['Python', 'PageRank', 'HITS Algorithm', 'Levenshtein Distance', 'Information Retrieval'],
+      technologies: ['Python', 'NLTK', 'PageRank', 'HITS Algorithm', 'Levenshtein Distance'],
       features: [
-        'Spell correction using Levenshtein Distance',
-        'Wildcard query handling and processing',
-        'PageRank algorithm implementation',
-        'HITS Algorithm for authority ranking'
+        'Implemented a boolean information retrieval system with stopword removal and lemmatization',
+        'Optimized search with spell correction by Levenshtein Distance and wildcard query handling using the bigram technique',
+        'Implemented Page Rank algorithm using Power Iteration method to rank web pages for a given query and analyzed Random Teleportation with varying probabilities',
+        'Implemented HITS Algorithm to evaluate web pages based on hubs score and authority score'
       ],
-      category: 'Algorithms'
+      category: 'NLP / Information Retrieval',
+      timeline: 'March 2022 - May 2022'
     },
     {
       title: 'Neural Style Transfer',
-      description: 'Advanced image stylization system using deep learning techniques with novel depth-preserving loss function for enhanced visual quality.',
+      description: 'Image stylization system using deep learning with enhanced VGGNet architecture and novel depth-preserving loss function.',
       icon: <Image className="h-8 w-8" />,
-      technologies: ['PyTorch', 'VGGNet', 'ADAM Optimizer', 'Computer Vision', 'Deep Learning'],
+      technologies: ['Python', 'PyTorch', 'TensorFlow', 'VGGNet', 'ADAM Optimizer'],
       features: [
-        'Enhanced VGGNet architecture implementation',
-        'Novel depth-preserving loss function',
-        'Improved convergence speed optimization',
-        'High-quality artistic style transfer'
+        'Leveraged VGGNet architecture and ADAM optimizer for efficient image stylization',
+        'Significantly enhanced stylization quality by introducing a novel depth preserving function into the loss function, leading to faster convergence, fewer iterations, and more visually appealing results'
       ],
-      category: 'Computer Vision'
+      category: 'Computer Vision',
+      timeline: 'November 2022 - December 2022'
     },
     {
       title: 'Spatial Indexing with QuadTrees',
-      description: 'High-performance geometric query processing system implemented in C++ using QuadTree data structures for optimal spatial indexing.',
+      description: 'High-performance geometric query processing system implemented in C++ using QuadTree data structures.',
       icon: <Code className="h-8 w-8" />,
-      technologies: ['C++', 'QuadTrees', 'Data Structures', 'Spatial Indexing', 'Algorithms'],
+      technologies: ['C++', 'QuadTrees', 'Data Structures', 'Spatial Indexing'],
       features: [
-        'Efficient QuadTree implementation',
-        'Optimized geometric query processing',
-        'Fast spatial indexing and retrieval',
-        'Scalable architecture for large datasets'
+        'Designed and implemented an efficient system for executing geometric queries',
+        'Utilized QuadTrees to achieve faster query processing time compared to other indexing methods'
       ],
-      category: 'Systems'
+      category: 'Algorithms',
+      timeline: 'February 2022'
+    },
+    {
+      title: 'Matrix Multiplication with OS Concepts',
+      description: 'Multi-threaded matrix multiplication system with scheduling algorithm analysis and synchronization.',
+      icon: <Cpu className="h-8 w-8" />,
+      technologies: ['Linux', 'C', 'Multi-threading', 'Synchronization', 'OS Concepts'],
+      features: [
+        'Developed a program to perform matrix multiplication efficiently using multi-threading',
+        'Used multi-threading and synchronization for reading input matrices in parallel',
+        'Analyzed and compared the response time, turnaround time, and waiting time for different scheduling techniques such as FCFS, SJF, and Round Robin with different time quanta'
+      ],
+      category: 'Systems',
+      timeline: 'November 2022'
     },
     {
       title: 'Chatbot for Visually Impaired Students',
-      description: 'Inclusive multilingual chatbot built with Microsoft AI tools to assist visually impaired students with natural language processing capabilities.',
-      icon: <Smartphone className="h-8 w-8" />,
-      technologies: ['Python', 'Microsoft AI Services', 'NLP', 'NLTK', 'Intent Classification'],
+      description: 'Multilingual chatbot using NLP techniques to assist visually impaired students with natural language processing.',
+      icon: <Users className="h-8 w-8" />,
+      technologies: ['Python', 'Microsoft AI Tools', 'NLP', 'Intent Classification'],
       features: [
-        'Multilingual support for accessibility',
-        'Advanced NLP and intent classification',
-        'Voice-based interaction capabilities',
-        'Specialized assistance for visually impaired users'
+        'Built a simple multilingual chatbot using NLP techniques to answer questions and assist visually impaired students',
+        'Integrated basic NLP pipelines and early-stage intent classification to improve user interaction'
       ],
-      category: 'AI/Accessibility'
+      category: 'AI/Accessibility',
+      timeline: 'November 2022'
     }
   ];
 
   const categoryColors = {
     'AI/ML': 'bg-blue-500/10 text-blue-600',
     'Full-stack': 'bg-green-500/10 text-green-600',
-    'Algorithms': 'bg-purple-500/10 text-purple-600',
+    'NLP / Information Retrieval': 'bg-purple-500/10 text-purple-600',
     'Computer Vision': 'bg-orange-500/10 text-orange-600',
-    'Systems': 'bg-red-500/10 text-red-600',
+    'Algorithms': 'bg-red-500/10 text-red-600',
+    'Systems': 'bg-yellow-500/10 text-yellow-600',
     'AI/Accessibility': 'bg-indigo-500/10 text-indigo-600'
   };
 
@@ -105,7 +115,7 @@ export const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="card-hover h-full">
+            <Card key={index} className="card-hover h-full cute-border">
               <CardContent className="p-6 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg text-primary">
@@ -116,7 +126,8 @@ export const Projects = () => {
                   </Badge>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{project.timeline}</p>
                 <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
 
                 <div className="space-y-4">
@@ -141,17 +152,6 @@ export const Projects = () => {
                         </Badge>
                       ))}
                     </div>
-                  </div>
-
-                  <div className="flex space-x-3 pt-4">
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </Button>
                   </div>
                 </div>
               </CardContent>

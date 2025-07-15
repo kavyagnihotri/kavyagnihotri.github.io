@@ -1,6 +1,5 @@
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { ChefHat, Waves, Palette, Dumbbell } from 'lucide-react';
 
 export const Hobbies = () => {
@@ -41,7 +40,7 @@ export const Hobbies = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {hobbies.map((hobby, index) => (
-            <Card key={index} className="card-hover text-center">
+            <Card key={index} className="card-hover text-center cute-border">
               <CardContent className="p-6">
                 <div className={`inline-flex p-4 rounded-full ${hobby.color} mb-4`}>
                   {hobby.icon}
@@ -51,19 +50,6 @@ export const Hobbies = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <div className="bg-card rounded-lg p-8 shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">More Details Coming Soon</h3>
-            <p className="text-muted-foreground">
-              I'll be adding more detailed information about each hobby, including photos, 
-              experiences, and achievements. Stay tuned for updates!
-            </p>
-            <Badge variant="outline" className="mt-4">
-              Content In Progress
-            </Badge>
-          </div>
         </div>
       </div>
     </section>

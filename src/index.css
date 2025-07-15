@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 262.1 83.3% 57.8%;
+    --primary: 340 75% 65%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -31,7 +31,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 262.1 83.3% 57.8%;
+    --ring: 340 75% 65%;
 
     --radius: 0.5rem;
 
@@ -55,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 262.1 83.3% 57.8%;
+    --primary: 340 75% 65%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -72,7 +72,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 262.1 83.3% 57.8%;
+    --ring: 340 75% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -81,6 +81,101 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Sea Theme */
+  .theme-sea {
+    --background: 195 100% 98%;
+    --foreground: 210 85% 15%;
+    --card: 195 100% 96%;
+    --card-foreground: 210 85% 15%;
+    --primary: 195 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 195 30% 85%;
+    --secondary-foreground: 210 85% 15%;
+    --muted: 195 30% 92%;
+    --muted-foreground: 210 15% 45%;
+    --accent: 195 30% 85%;
+    --accent-foreground: 210 85% 15%;
+    --border: 195 30% 82%;
+    --input: 195 30% 82%;
+    --ring: 195 85% 55%;
+  }
+
+  /* Beach Theme */
+  .theme-beach {
+    --background: 45 100% 98%;
+    --foreground: 30 85% 15%;
+    --card: 45 100% 96%;
+    --card-foreground: 30 85% 15%;
+    --primary: 45 85% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 30% 85%;
+    --secondary-foreground: 30 85% 15%;
+    --muted: 45 30% 92%;
+    --muted-foreground: 30 15% 45%;
+    --accent: 45 30% 85%;
+    --accent-foreground: 30 85% 15%;
+    --border: 45 30% 82%;
+    --input: 45 30% 82%;
+    --ring: 45 85% 60%;
+  }
+
+  /* Mountain Theme */
+  .theme-mountain {
+    --background: 210 20% 98%;
+    --foreground: 210 85% 15%;
+    --card: 210 20% 96%;
+    --card-foreground: 210 85% 15%;
+    --primary: 210 65% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 85%;
+    --secondary-foreground: 210 85% 15%;
+    --muted: 210 20% 92%;
+    --muted-foreground: 210 15% 45%;
+    --accent: 210 20% 85%;
+    --accent-foreground: 210 85% 15%;
+    --border: 210 20% 82%;
+    --input: 210 20% 82%;
+    --ring: 210 65% 50%;
+  }
+
+  /* Camping Theme */
+  .theme-camping {
+    --background: 25 40% 98%;
+    --foreground: 25 85% 15%;
+    --card: 25 40% 96%;
+    --card-foreground: 25 85% 15%;
+    --primary: 25 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 25 30% 85%;
+    --secondary-foreground: 25 85% 15%;
+    --muted: 25 30% 92%;
+    --muted-foreground: 25 15% 45%;
+    --accent: 25 30% 85%;
+    --accent-foreground: 25 85% 15%;
+    --border: 25 30% 82%;
+    --input: 25 30% 82%;
+    --ring: 25 75% 55%;
+  }
+
+  /* Forest Theme */
+  .theme-forest {
+    --background: 120 25% 98%;
+    --foreground: 120 85% 15%;
+    --card: 120 25% 96%;
+    --card-foreground: 120 85% 15%;
+    --primary: 120 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 120 20% 85%;
+    --secondary-foreground: 120 85% 15%;
+    --muted: 120 20% 92%;
+    --muted-foreground: 120 15% 45%;
+    --accent: 120 20% 85%;
+    --accent-foreground: 120 85% 15%;
+    --border: 120 20% 82%;
+    --input: 120 20% 82%;
+    --ring: 120 65% 45%;
   }
 }
 
@@ -100,18 +195,26 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent;
   }
   
   .hero-gradient {
-    @apply bg-gradient-to-br from-primary/10 via-purple-500/10 to-blue-500/10;
+    @apply bg-gradient-to-br from-primary/10 via-purple-500/10 to-pink-500/10;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 hover:scale-[1.02];
   }
   
   .section-padding {
     @apply py-20 px-4 md:px-8;
+  }
+
+  .cute-border {
+    @apply border-2 border-primary/30 rounded-2xl;
+  }
+
+  .cute-shadow {
+    @apply shadow-lg shadow-primary/20;
   }
 }

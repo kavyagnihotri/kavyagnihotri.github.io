@@ -14,16 +14,41 @@ export const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend service
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      // Using Formspree for form submission
+      const response = await fetch('https://formspree.io/f/xdkoqvvk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again later or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -97,20 +122,18 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-lg p-6 shadow-sm">
+            <div className="bg-card rounded-lg p-6 shadow-sm cute-border">
               <h4 className="font-semibold mb-3">I'm interested in:</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Full-time opportunities in ML/AI</li>
                 <li>• Research collaborations</li>
                 <li>• Open source contributions</li>
-                <li>• Speaking at conferences/events</li>
-                <li>• Mentoring and knowledge sharing</li>
               </ul>
             </div>
           </div>
 
           {/* Contact Form */}
-          <Card className="card-hover">
+          <Card className="card-hover cute-border">
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -161,9 +184,9 @@ export const Contact = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
                   <Send className="h-4 w-4 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>
