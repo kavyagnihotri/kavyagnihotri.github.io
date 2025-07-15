@@ -35,18 +35,18 @@ export const ThemeSelector = () => {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed bottom-4 right-4 z-50">
       <Button
         variant="outline"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="cute-border cute-shadow"
+        className="cute-border cute-shadow bg-background"
       >
         <Palette className="h-4 w-4" />
       </Button>
       
       {isOpen && (
-        <Card className="absolute top-12 right-0 w-56 cute-border cute-shadow">
+        <Card className="absolute bottom-12 right-0 w-56 cute-border cute-shadow bg-background">
           <CardContent className="p-4">
             <h3 className="font-semibold mb-3 text-sm">Choose Theme</h3>
             <div className="grid grid-cols-2 gap-2">

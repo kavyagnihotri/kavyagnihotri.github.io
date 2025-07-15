@@ -10,6 +10,87 @@ export const Hero = () => {
     }
   };
 
+  const downloadCV = () => {
+    // Create a dummy PDF blob (you can replace this with your actual CV)
+    const dummyPDFContent = `%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 44
+>>
+stream
+BT
+/F1 24 Tf
+100 700 Td
+(Kavyanjali Agnihotri - CV) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000000370 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+456
+%%EOF`;
+
+    const blob = new Blob([dummyPDFContent], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Kavyanjali_Agnihotri_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
       {/* Background decorations */}
@@ -38,7 +119,7 @@ export const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-in-right">
-            <Button size="lg" className="group">
+            <Button size="lg" className="group" onClick={downloadCV}>
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce-subtle" />
               Download CV
             </Button>
