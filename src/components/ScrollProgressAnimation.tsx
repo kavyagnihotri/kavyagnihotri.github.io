@@ -61,7 +61,7 @@ export const ScrollProgressAnimation = () => {
 
   return (
     <div className="fixed bottom-4 left-0 right-0 h-20 pointer-events-none z-30">
-      {/* Cute theme - puppy walking to bone treats */}
+      {/* Cute theme - cat walking to ball of yarn */}
       {currentTheme === 'cute' && (
         <div className="relative w-full h-full">
           {/* Path line */}
@@ -72,33 +72,34 @@ export const ScrollProgressAnimation = () => {
             ></div>
           </div>
           
-          {/* Moving puppy */}
+          {/* Moving cat */}
           <div 
             className="absolute bottom-6 transition-all duration-300"
             style={{ left: `${15 + getProgressPosition()}%` }}
           >
             <div className="w-8 h-6 bg-primary/80 rounded-full relative">
+              {/* Body */}
+              <div className="absolute top-1 left-1 w-6 h-3 bg-primary/80 rounded-full"></div>
               {/* Head */}
               <div className="absolute -top-1 right-1 w-3 h-3 bg-primary rounded-full"></div>
               {/* Ears */}
-              <div className="absolute -top-2 right-0 w-1.5 h-2 bg-primary/60 rounded-full"></div>
-              <div className="absolute -top-2 right-2 w-1.5 h-2 bg-primary/60 rounded-full"></div>
+              <div className="absolute -top-2 right-0.5 w-1 h-1.5 bg-primary/60 rounded-full"></div>
+              <div className="absolute -top-2 right-2 w-1 h-1.5 bg-primary/60 rounded-full"></div>
               {/* Tail */}
-              <div className="absolute top-0 -left-1 w-1 h-3 bg-primary/60 rounded-full rotate-45"></div>
+              <div className="absolute top-0 -left-1 w-1 h-4 bg-primary/60 rounded-full rotate-45"></div>
+              {/* Legs */}
+              <div className="absolute bottom-0 left-2 w-1 h-2 bg-primary/60 rounded-full"></div>
+              <div className="absolute bottom-0 left-4 w-1 h-2 bg-primary/60 rounded-full"></div>
             </div>
           </div>
           
-          {/* Bone treats destination */}
+          {/* Ball of yarn */}
           <div className="absolute bottom-6 right-[15%]">
-            <div className="flex gap-1">
-              <div className="w-4 h-2 bg-primary/80 rounded-full relative">
-                <div className="absolute -left-1 top-0 w-2 h-2 bg-primary/80 rounded-full"></div>
-                <div className="absolute -right-1 top-0 w-2 h-2 bg-primary/80 rounded-full"></div>
-              </div>
-              <div className="w-3 h-1.5 bg-primary/60 rounded-full relative">
-                <div className="absolute -left-0.5 top-0 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
-                <div className="absolute -right-0.5 top-0 w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
-              </div>
+            <div className="w-6 h-6 bg-primary/80 rounded-full relative">
+              <div className="absolute top-1 left-1 w-4 h-4 bg-primary/60 rounded-full"></div>
+              <div className="absolute top-0 left-2 w-2 h-1 bg-primary/40 rounded-full"></div>
+              <div className="absolute top-2 left-0 w-3 h-1 bg-primary/40 rounded-full"></div>
+              <div className="absolute top-4 left-3 w-2 h-1 bg-primary/40 rounded-full"></div>
             </div>
           </div>
         </div>
@@ -127,21 +128,32 @@ export const ScrollProgressAnimation = () => {
             className="absolute bottom-6 transition-all duration-300"
             style={{ left: `${15 + getProgressPosition()}%` }}
           >
-            <div className="w-8 h-4 bg-primary/80 relative">
+            <div className="relative">
               {/* Hull */}
-              <div className="w-full h-3 bg-primary/80 rounded-b-full"></div>
+              <div className="w-10 h-4 bg-primary/80 relative">
+                <div className="absolute bottom-0 left-1 right-1 h-3 bg-primary/80 rounded-b-full"></div>
+              </div>
               {/* Mast */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0.5 h-4 bg-primary"></div>
+              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-0.5 h-5 bg-primary/60"></div>
               {/* Sail */}
-              <div className="absolute -top-1 left-2 w-3 h-2 bg-primary/60 rounded-r"></div>
+              <div className="absolute -top-2 left-3 w-4 h-3 bg-primary/60 rounded-r-lg"></div>
+              {/* Flag */}
+              <div className="absolute -top-2 left-4 w-1 h-1 bg-red-400"></div>
             </div>
           </div>
           
           {/* Treasure chest */}
           <div className="absolute bottom-6 right-[15%]">
-            <div className="w-8 h-5 bg-primary/80 relative rounded border-2 border-primary">
-              <div className="absolute top-0 left-0 right-0 h-2 bg-primary/60 rounded-t border-b border-primary"></div>
-              <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-yellow-400 rounded-full"></div>
+            <div className="w-8 h-6 bg-primary/80 relative rounded-sm">
+              {/* Chest body */}
+              <div className="absolute bottom-0 left-0 right-0 h-4 bg-primary/80 rounded-sm border-2 border-primary/60"></div>
+              {/* Chest lid */}
+              <div className="absolute top-0 left-0 right-0 h-2 bg-primary/60 rounded-t-sm border-2 border-primary/40"></div>
+              {/* Lock */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-yellow-400 rounded-full"></div>
+              {/* Metal bands */}
+              <div className="absolute top-1 left-0 right-0 h-0.5 bg-primary/40"></div>
+              <div className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary/40"></div>
             </div>
           </div>
           
@@ -159,7 +171,7 @@ export const ScrollProgressAnimation = () => {
         </div>
       )}
 
-      {/* Beach theme - sand mountain to sandcastle */}
+      {/* Beach theme - bucket with sand to sandcastle */}
       {currentTheme === 'beach' && (
         <div className="relative w-full h-full">
           {/* Sand path */}
@@ -170,14 +182,20 @@ export const ScrollProgressAnimation = () => {
             ></div>
           </div>
           
-          {/* Moving sand mountain */}
+          {/* Moving bucket with sand */}
           <div 
             className="absolute bottom-6 transition-all duration-300"
             style={{ left: `${15 + getProgressPosition()}%` }}
           >
             <div className="relative">
-              <div className="w-6 h-4 bg-primary/80 clip-triangle"></div>
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary/60"></div>
+              {/* Bucket */}
+              <div className="w-6 h-5 bg-primary/80 relative">
+                <div className="absolute bottom-0 left-0 right-0 h-4 bg-primary/80 rounded-b-sm border-2 border-primary/60"></div>
+                {/* Handle */}
+                <div className="absolute -top-1 left-1 right-1 h-1 border-t-2 border-primary/60 rounded-full"></div>
+                {/* Sand inside */}
+                <div className="absolute top-0 left-1 right-1 h-2 bg-primary/60 rounded-sm"></div>
+              </div>
             </div>
           </div>
           
@@ -185,15 +203,19 @@ export const ScrollProgressAnimation = () => {
           <div className="absolute bottom-6 right-[15%]">
             <div className="relative">
               {/* Main castle */}
-              <div className="w-8 h-6 bg-primary/80 relative">
+              <div className="w-8 h-6 bg-primary/80 relative rounded-sm">
+                {/* Base */}
+                <div className="absolute bottom-0 left-0 right-0 h-3 bg-primary/80 rounded-sm"></div>
                 {/* Towers */}
-                <div className="absolute -top-2 left-0 w-2 h-3 bg-primary/60"></div>
-                <div className="absolute -top-3 left-3 w-2 h-4 bg-primary/60"></div>
-                <div className="absolute -top-2 right-0 w-2 h-3 bg-primary/60"></div>
+                <div className="absolute -top-2 left-0 w-2 h-3 bg-primary/60 rounded-sm"></div>
+                <div className="absolute -top-3 left-3 w-2 h-4 bg-primary/60 rounded-sm"></div>
+                <div className="absolute -top-2 right-0 w-2 h-3 bg-primary/60 rounded-sm"></div>
                 {/* Flags */}
-                <div className="absolute -top-3 left-1 w-1 h-1 bg-red-400"></div>
-                <div className="absolute -top-4 left-4 w-1 h-1 bg-blue-400"></div>
-                <div className="absolute -top-3 right-1 w-1 h-1 bg-yellow-400"></div>
+                <div className="absolute -top-3 left-1 w-1 h-1 bg-red-400 rounded-full"></div>
+                <div className="absolute -top-4 left-4 w-1 h-1 bg-blue-400 rounded-full"></div>
+                <div className="absolute -top-3 right-1 w-1 h-1 bg-yellow-400 rounded-full"></div>
+                {/* Door */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-primary/40 rounded-t-sm"></div>
               </div>
             </div>
           </div>
@@ -223,7 +245,7 @@ export const ScrollProgressAnimation = () => {
             </svg>
           </div>
           
-          {/* Moving hiker */}
+          {/* Moving hiker - standing stick figure */}
           <div 
             className="absolute transition-all duration-300"
             style={{ 
@@ -231,13 +253,21 @@ export const ScrollProgressAnimation = () => {
               bottom: `${6 + (scrollProgress * 0.3)}px`
             }}
           >
-            <div className="w-4 h-6 bg-primary/80 rounded-t-full relative">
+            <div className="relative">
               {/* Head */}
-              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary rounded-full"></div>
+              <div className="w-2 h-2 bg-primary/80 rounded-full mx-auto mb-0.5"></div>
+              {/* Body */}
+              <div className="w-0.5 h-4 bg-primary/80 mx-auto"></div>
+              {/* Arms */}
+              <div className="absolute top-2 -left-1 w-2 h-0.5 bg-primary/80 rotate-12"></div>
+              <div className="absolute top-2 -right-1 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
+              {/* Legs */}
+              <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-primary/80 rotate-12"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
               {/* Backpack */}
-              <div className="absolute top-1 -right-1 w-1.5 h-3 bg-primary/60 rounded"></div>
+              <div className="absolute top-1 -right-1 w-1 h-2 bg-primary/60 rounded-sm"></div>
               {/* Hiking stick */}
-              <div className="absolute top-0 -left-1 w-0.5 h-5 bg-primary/40 rotate-12"></div>
+              <div className="absolute top-0 -left-1 w-0.5 h-4 bg-primary/40 rotate-12"></div>
             </div>
           </div>
           
@@ -262,22 +292,24 @@ export const ScrollProgressAnimation = () => {
             ></div>
           </div>
           
-          {/* Moving girl stick figure */}
+          {/* Moving girl stick figure - improved standing posture */}
           <div 
             className="absolute bottom-6 transition-all duration-300"
             style={{ left: `${15 + getProgressPosition()}%` }}
           >
             <div className="relative">
               {/* Head */}
-              <div className="w-3 h-3 bg-primary/80 rounded-full mx-auto mb-1"></div>
+              <div className="w-2 h-2 bg-primary/80 rounded-full mx-auto mb-0.5"></div>
               {/* Body */}
               <div className="w-0.5 h-4 bg-primary/80 mx-auto"></div>
               {/* Arms */}
-              <div className="absolute top-4 -left-1 w-3 h-0.5 bg-primary/80 rotate-12"></div>
-              <div className="absolute top-4 -right-1 w-3 h-0.5 bg-primary/80 -rotate-12"></div>
+              <div className="absolute top-2 -left-1 w-2 h-0.5 bg-primary/80 rotate-12"></div>
+              <div className="absolute top-2 -right-1 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
               {/* Legs */}
-              <div className="absolute bottom-0 -left-1 w-3 h-0.5 bg-primary/80 rotate-12"></div>
-              <div className="absolute bottom-0 -right-1 w-3 h-0.5 bg-primary/80 -rotate-12"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-primary/80 rotate-12"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
+              {/* Hair */}
+              <div className="absolute -top-1 left-0.5 w-1 h-1 bg-primary/60 rounded-full"></div>
             </div>
           </div>
           
@@ -307,21 +339,31 @@ export const ScrollProgressAnimation = () => {
             ></div>
           </div>
           
-          {/* Moving fox */}
+          {/* Moving fox - improved to look more fox-like */}
           <div 
             className="absolute bottom-6 transition-all duration-300"
             style={{ left: `${15 + getProgressPosition()}%` }}
           >
             <div className="relative">
               {/* Body */}
-              <div className="w-6 h-3 bg-primary/80 rounded-full"></div>
+              <div className="w-6 h-2 bg-orange-600/80 rounded-full"></div>
               {/* Head */}
-              <div className="absolute -top-1 right-0 w-3 h-3 bg-primary/80 rounded-full"></div>
+              <div className="absolute -top-1 right-0 w-3 h-3 bg-orange-600/80 rounded-full"></div>
+              {/* Snout */}
+              <div className="absolute -top-1 right-0 w-2 h-2 bg-orange-700/80 rounded-full"></div>
               {/* Ears */}
-              <div className="absolute -top-2 right-0 w-1 h-1.5 bg-primary/60 rounded-full"></div>
-              <div className="absolute -top-2 right-1 w-1 h-1.5 bg-primary/60 rounded-full"></div>
+              <div className="absolute -top-2 right-0 w-1 h-1.5 bg-orange-600/80 rounded-full"></div>
+              <div className="absolute -top-2 right-1 w-1 h-1.5 bg-orange-600/80 rounded-full"></div>
+              {/* White chest */}
+              <div className="absolute top-0 right-1 w-1.5 h-1.5 bg-white/80 rounded-full"></div>
               {/* Tail */}
-              <div className="absolute top-0 -left-2 w-4 h-1.5 bg-primary/60 rounded-full"></div>
+              <div className="absolute top-0 -left-3 w-4 h-1.5 bg-orange-600/80 rounded-full"></div>
+              <div className="absolute top-0 -left-2 w-1 h-1 bg-white/80 rounded-full"></div>
+              {/* Legs */}
+              <div className="absolute bottom-0 left-1 w-0.5 h-1 bg-orange-700/80 rounded-full"></div>
+              <div className="absolute bottom-0 left-2 w-0.5 h-1 bg-orange-700/80 rounded-full"></div>
+              <div className="absolute bottom-0 right-1 w-0.5 h-1 bg-orange-700/80 rounded-full"></div>
+              <div className="absolute bottom-0 right-2 w-0.5 h-1 bg-orange-700/80 rounded-full"></div>
             </div>
           </div>
           
