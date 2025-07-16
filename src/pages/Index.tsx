@@ -14,6 +14,7 @@ import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { ThemeSelector } from '@/components/ThemeSelector';
 import { ThemeDecorations } from '@/components/ThemeDecorations';
+import { ScrollProgressAnimation } from '@/components/ScrollProgressAnimation';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,20 +40,23 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <ThemeDecorations />
       <ThemeSelector />
       <Header />
-      <Hero />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Achievements />
-      <Hobbies />
-      <Volunteering />
-      <Contact />
-      <Footer />
+      <div className="relative">
+        <ThemeDecorations />
+        <Hero />
+        <About />
+        <Education />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Achievements />
+        <Hobbies />
+        <Volunteering />
+        <Contact />
+        <Footer />
+      </div>
+      <ScrollProgressAnimation />
     </div>
   );
 };

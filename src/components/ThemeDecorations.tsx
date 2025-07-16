@@ -43,7 +43,7 @@ export const ThemeDecorations = () => {
   };
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
       {/* Cute theme decorations */}
       {currentTheme === 'cute' && (
         <>
@@ -103,6 +103,9 @@ export const ThemeDecorations = () => {
           </div>
           <div className="absolute top-1/2 left-1/3 animate-float">
             <Shell size={14} className="text-primary/70" />
+          </div>
+          <div className="absolute top-1/4 right-1/3 animate-float-delay-3">
+            <div className="w-4 h-4 bg-yellow-400/80 rounded-full"></div>
           </div>
         </>
       )}
