@@ -245,7 +245,7 @@ export const ScrollProgressAnimation = () => {
             </svg>
           </div>
           
-          {/* Moving hiker - standing stick figure */}
+          {/* Moving hiker - mage-like with hat and staff */}
           <div 
             className="absolute transition-all duration-300"
             style={{ 
@@ -254,20 +254,22 @@ export const ScrollProgressAnimation = () => {
             }}
           >
             <div className="relative">
+              {/* Wizard hat */}
+              <div className="w-1 h-3 bg-primary/80 rounded-t-full mx-auto mb-0.5 transform rotate-12"></div>
               {/* Head */}
               <div className="w-2 h-2 bg-primary/80 rounded-full mx-auto mb-0.5"></div>
-              {/* Body */}
-              <div className="w-0.5 h-4 bg-primary/80 mx-auto"></div>
+              {/* Body/robe */}
+              <div className="w-1.5 h-4 bg-primary/80 mx-auto rounded-b-sm"></div>
               {/* Arms */}
-              <div className="absolute top-2 -left-1 w-2 h-0.5 bg-primary/80 rotate-12"></div>
-              <div className="absolute top-2 -right-1 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
+              <div className="absolute top-3 -left-1 w-2 h-0.5 bg-primary/80 rotate-12"></div>
+              <div className="absolute top-3 -right-1 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
               {/* Legs */}
               <div className="absolute bottom-0 left-0 w-2 h-0.5 bg-primary/80 rotate-12"></div>
               <div className="absolute bottom-0 right-0 w-2 h-0.5 bg-primary/80 -rotate-12"></div>
-              {/* Backpack */}
-              <div className="absolute top-1 -right-1 w-1 h-2 bg-primary/60 rounded-sm"></div>
-              {/* Hiking stick */}
-              <div className="absolute top-0 -left-1 w-0.5 h-4 bg-primary/40 rotate-12"></div>
+              {/* Staff */}
+              <div className="absolute top-0 -left-1.5 w-0.5 h-6 bg-primary/60"></div>
+              {/* Staff orb */}
+              <div className="absolute -top-1 -left-1.5 w-1 h-1 bg-primary/80 rounded-full"></div>
             </div>
           </div>
           
