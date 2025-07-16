@@ -72,24 +72,24 @@ export const ScrollProgressAnimation = () => {
             ></div>
           </div>
           
-          {/* Moving cat */}
+          {/* Moving cat - made thinner */}
           <div 
             className="absolute bottom-6 transition-all duration-300"
             style={{ left: `${15 + getProgressPosition()}%` }}
           >
-            <div className="w-8 h-6 bg-primary/80 rounded-full relative">
-              {/* Body */}
-              <div className="absolute top-1 left-1 w-6 h-3 bg-primary/80 rounded-full"></div>
+            <div className="w-6 h-4 bg-primary/80 rounded-full relative">
+              {/* Body - made thinner */}
+              <div className="absolute top-0.5 left-0.5 w-5 h-2 bg-primary/80 rounded-full"></div>
               {/* Head */}
-              <div className="absolute -top-1 right-1 w-3 h-3 bg-primary rounded-full"></div>
+              <div className="absolute -top-1 right-0.5 w-2.5 h-2.5 bg-primary rounded-full"></div>
               {/* Ears */}
-              <div className="absolute -top-2 right-0.5 w-1 h-1.5 bg-primary/60 rounded-full"></div>
-              <div className="absolute -top-2 right-2 w-1 h-1.5 bg-primary/60 rounded-full"></div>
+              <div className="absolute -top-2 right-0.5 w-0.5 h-1 bg-primary/60 rounded-full"></div>
+              <div className="absolute -top-2 right-1.5 w-0.5 h-1 bg-primary/60 rounded-full"></div>
               {/* Tail */}
-              <div className="absolute top-0 -left-1 w-1 h-4 bg-primary/60 rounded-full rotate-45"></div>
+              <div className="absolute top-0 -left-1 w-0.5 h-3 bg-primary/60 rounded-full rotate-45"></div>
               {/* Legs */}
-              <div className="absolute bottom-0 left-2 w-1 h-2 bg-primary/60 rounded-full"></div>
-              <div className="absolute bottom-0 left-4 w-1 h-2 bg-primary/60 rounded-full"></div>
+              <div className="absolute bottom-0 left-1.5 w-0.5 h-1.5 bg-primary/60 rounded-full"></div>
+              <div className="absolute bottom-0 left-3 w-0.5 h-1.5 bg-primary/60 rounded-full"></div>
             </div>
           </div>
           
