@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { Umbrella, Waves, Mountain, TreePine, Tent, Heart, Sun, Shell, Fish, Snowflake, Campfire } from 'lucide-react';
+import { Umbrella, Waves, Mountain, TreePine, Tent, Heart, Sun, Shell, Fish, Snowflake, Flame } from 'lucide-react';
 
 export const ThemeDecorations = () => {
   const [currentTheme, setCurrentTheme] = useState('');
@@ -135,7 +135,7 @@ export const ThemeDecorations = () => {
             <Tent size={30} className="text-primary" />
           </div>
           <div className="absolute top-40 right-20 animate-flicker">
-            <Campfire size={20} className="text-primary" />
+            <Flame size={20} className="text-primary" />
           </div>
           <div className="absolute bottom-40 left-20 animate-flicker-delay">
             <div className="w-3 h-5 bg-primary rounded-full blur-[2px] opacity-80"></div>
