@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { Beach, Waves, Mountain, TreePine, Tent, Heart } from 'lucide-react';
+import { Umbrella, Waves, Mountain, TreePine, Tent, Heart, Sun, Shell, Fish, Snowflake, Campfire } from 'lucide-react';
 
 export const ThemeDecorations = () => {
   const [currentTheme, setCurrentTheme] = useState('');
@@ -75,13 +75,13 @@ export const ThemeDecorations = () => {
             <Waves size={20} className="text-primary" />
           </div>
           <div className="absolute bottom-40 left-20 animate-wave-delay-2">
-            <Waves size={28} className="text-primary" />
+            <Fish size={28} className="text-primary" />
           </div>
           <div className="absolute top-1/3 right-1/4 animate-float">
-            <div className="w-6 h-6 rounded-full bg-primary/20 border border-primary/40"></div>
+            <Shell size={16} className="text-primary" />
           </div>
           <div className="absolute bottom-1/3 left-1/3 animate-float-delay">
-            <div className="w-4 h-4 rounded-full bg-primary/20 border border-primary/40"></div>
+            <div className="w-4 h-4 rounded-full bg-primary/30 border border-primary/50"></div>
           </div>
         </>
       )}
@@ -90,19 +90,19 @@ export const ThemeDecorations = () => {
       {currentTheme === 'beach' && (
         <>
           <div className="absolute top-20 left-10 animate-float">
-            <Beach size={24} className="text-primary" />
+            <Umbrella size={24} className="text-primary" />
           </div>
           <div className="absolute top-40 right-20 animate-bounce-slow">
-            <div className="w-8 h-8 rounded-full bg-primary border-2 border-primary/80"></div>
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-blue-400 border-2 border-primary/80"></div>
           </div>
-          <div className="absolute bottom-40 left-20">
-            <div className="w-16 h-16 rotate-45 animate-sway">
-              <div className="w-full h-2 bg-primary rounded-full"></div>
-              <div className="w-2 h-16 bg-primary rounded-full mx-auto"></div>
-            </div>
+          <div className="absolute bottom-40 left-20 animate-float-delay">
+            <Sun size={20} className="text-primary" />
           </div>
-          <div className="absolute top-2/3 right-1/4 animate-float-delay">
+          <div className="absolute top-2/3 right-1/4 animate-float-delay-2">
             <div className="w-6 h-8 bg-primary/50 rounded-lg rotate-45"></div>
+          </div>
+          <div className="absolute top-1/2 left-1/3 animate-float">
+            <Shell size={14} className="text-primary/70" />
           </div>
         </>
       )}
@@ -120,10 +120,10 @@ export const ThemeDecorations = () => {
             <Mountain size={24} className="text-primary/70" />
           </div>
           <div className="absolute top-60 left-1/3 animate-float-delay">
-            <div className="w-4 h-4 bg-white rounded-full opacity-70"></div>
+            <Snowflake size={16} className="text-primary/60" />
           </div>
           <div className="absolute top-40 right-1/3 animate-float-delay-2">
-            <div className="w-3 h-3 bg-white rounded-full opacity-70"></div>
+            <Snowflake size={12} className="text-primary/60" />
           </div>
         </>
       )}
@@ -135,7 +135,7 @@ export const ThemeDecorations = () => {
             <Tent size={30} className="text-primary" />
           </div>
           <div className="absolute top-40 right-20 animate-flicker">
-            <div className="w-4 h-6 bg-primary rounded-full blur-[2px] opacity-80"></div>
+            <Campfire size={20} className="text-primary" />
           </div>
           <div className="absolute bottom-40 left-20 animate-flicker-delay">
             <div className="w-3 h-5 bg-primary rounded-full blur-[2px] opacity-80"></div>
