@@ -6,8 +6,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages specific configuration
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
+  // GitHub Pages configuration - uses relative paths for proper deployment
+  base: mode === 'production' ? './' : '/',
   
   server: {
     host: "::",
@@ -25,10 +25,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
   
-  // Optimize build for GitHub Pages
+  // Optimized build configuration for GitHub Pages
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    sourcemap: false,
     // Ensure proper asset handling for GitHub Pages
     rollupOptions: {
       output: {
@@ -36,6 +37,10 @@ export default defineConfig(({ mode }) => ({
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
         },
+        // Use relative paths for assets
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
       },
     },
   },

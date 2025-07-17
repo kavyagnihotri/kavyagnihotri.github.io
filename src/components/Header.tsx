@@ -71,12 +71,12 @@ export const Header = () => {
     }`}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo/Name - always navigates to home */}
+          {/* Logo/Name - simplified to just "Kavya" */}
           <button
             onClick={() => navigateToPage('/')}
             className="text-2xl font-bold text-gradient hover:opacity-80 transition-opacity"
           >
-            Kavyanjali Agnihotri
+            Kavya
           </button>
 
           {/* Desktop Navigation */}
