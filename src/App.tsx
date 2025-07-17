@@ -31,7 +31,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename="/">
         <Routes>
           {/* Main portfolio page */}
           <Route path="/" element={<Index />} />

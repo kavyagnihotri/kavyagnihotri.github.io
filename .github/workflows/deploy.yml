@@ -1,5 +1,5 @@
 
-name: Deploy to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
       
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -28,8 +30,22 @@ jobs:
       run: npm run build
       
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+        # Remove existing files but keep .git and .github
+        find . -maxdepth 1 ! -name '.git' ! -name '.github' ! -name 'dist' -exec rm -rf {} + 2>/dev/null || true
+        
+        # Move built files to root
+        mv dist/* . 2>/dev/null || true
+        mv dist/.* . 2>/dev/null || true
+        rmdir dist 2>/dev/null || true
+        
+        # Add and commit
+        git add .
+        git commit -m "Deploy to GitHub Pages" || exit 0
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
