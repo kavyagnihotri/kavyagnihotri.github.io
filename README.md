@@ -1,73 +1,146 @@
-# Welcome to your Lovable project
 
-## Project info
+# Kavya's Personal Website
+
+A personal portfolio website built with React, TypeScript, and Tailwind CSS, optimized for GitHub Pages deployment.
+
+## Project Info
 
 **URL**: https://lovable.dev/projects/cfa8c0df-d49e-48e7-821e-001b2f938572
 
-## How can I edit this code?
+## GitHub Pages Deployment
 
-There are several ways of editing your application.
+This website is specifically configured for GitHub Pages deployment. To deploy:
 
-**Use Lovable**
+1. **Fork or create a repository** named `<your-username>.github.io`
+2. **Push your code** to the main branch
+3. **Enable GitHub Pages** in repository settings:
+   - Go to Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: `gh-pages` (this will be created automatically)
+4. **Wait for deployment** - GitHub Actions will automatically build and deploy
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/cfa8c0df-d49e-48e7-821e-001b2f938572) and start prompting.
+### Manual Deployment
 
-Changes made via Lovable will be committed automatically to this repo.
+If you prefer manual deployment:
 
-**Use your preferred IDE**
+```bash
+# Build the project
+npm run build
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# The dist/ folder contains your built website
+# Copy contents to your GitHub Pages repository
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Local Development
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+### Setup
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Adding Blog Posts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+To add new blog posts:
 
-**Use GitHub Codespaces**
+1. Create a new `.md` file in the `public/blogs/` directory
+2. Use the following frontmatter format:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```markdown
+---
+title: "Your Blog Post Title"
+date: "2024-01-15"
+readTime: "5 min read"
+tags: ["tag1", "tag2"]
+author: "Your Name"
+excerpt: "Brief description of your post"
+---
 
-## What technologies are used for this project?
+# Your Blog Post Title
 
-This project is built with:
+Your content here...
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. The blog will automatically appear on the website
 
-## How can I deploy this project?
+## Technology Stack
 
-Simply open [Lovable](https://lovable.dev/projects/cfa8c0df-d49e-48e7-821e-001b2f938572) and click on Share -> Publish.
+- **React** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Vite** - Build tool
+- **shadcn/ui** - UI components
+- **React Router** - Navigation
+- **React Query** - Data fetching
 
-## Can I connect a custom domain to my Lovable project?
+## Project Structure
 
-Yes, you can!
+```
+src/
+├── components/          # UI components
+├── pages/              # Page components
+├── lib/                # Utilities
+├── hooks/              # Custom hooks
+└── index.css           # Global styles
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+public/
+├── blogs/              # Blog markdown files
+└── .nojekyll          # Prevents Jekyll processing
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Features
+
+- **Responsive design** - Works on all devices
+- **Theme system** - Multiple color themes
+- **Blog system** - Markdown-based blog posts
+- **Smooth animations** - Engaging user experience
+- **SEO optimized** - Meta tags and proper structure
+- **GitHub Pages ready** - Optimized for deployment
+
+## Editing
+
+### Using Lovable
+
+Visit the [Lovable Project](https://lovable.dev/projects/cfa8c0df-d49e-48e7-821e-001b2f938572) to edit with AI assistance.
+
+### Using Your IDE
+
+Make changes locally and push to GitHub. All changes will sync automatically.
+
+### GitHub Codespaces
+
+Use GitHub Codespaces for a cloud-based development environment.
+
+## Deployment Notes
+
+- The website uses relative paths for GitHub Pages compatibility
+- A `.nojekyll` file prevents Jekyll processing
+- GitHub Actions automatically builds and deploys changes
+- All assets are properly bundled and optimized
+
+## Custom Domain
+
+To use a custom domain:
+
+1. Add a `CNAME` file to the `public/` directory with your domain
+2. Configure your domain's DNS to point to GitHub Pages
+3. Enable custom domain in GitHub Pages settings
+
+## Support
+
+For issues with the website, please check:
+- [GitHub Pages documentation](https://docs.github.com/en/pages)
+- [Vite documentation](https://vitejs.dev/)
+- [React documentation](https://react.dev/)
