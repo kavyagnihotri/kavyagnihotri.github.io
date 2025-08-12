@@ -57,22 +57,22 @@ const BlogsPage = () => {
         
         // Sample blog posts - replace this with actual file discovery
         const samplePosts: BlogPost[] = [
-          {
-            slug: 'welcome-to-my-blog',
-            title: 'Welcome to My Blog',
-            date: '2024-01-15',
-            excerpt: 'This is my first blog post where I introduce myself and talk about what you can expect from this blog.',
-            readTime: '3 min read',
-            tags: ['introduction', 'personal']
-          },
-          {
-            slug: 'machine-learning-journey',
-            title: 'My Machine Learning Journey',
-            date: '2024-01-10',
-            excerpt: 'A reflection on my journey into machine learning, the challenges I faced, and the lessons I learned.',
-            readTime: '8 min read',
-            tags: ['machine-learning', 'career', 'learning']
-          }
+          // {
+          //   slug: 'welcome-to-my-blog',
+          //   title: 'Welcome to My Blog',
+          //   date: '2024-01-15',
+          //   excerpt: 'This is my first blog post where I introduce myself and talk about what you can expect from this blog.',
+          //   readTime: '3 min read',
+          //   tags: ['introduction', 'personal']
+          // },
+          // {
+          //   slug: 'machine-learning-journey',
+          //   title: 'My Machine Learning Journey',
+          //   date: '2024-01-10',
+          //   excerpt: 'A reflection on my journey into machine learning, the challenges I faced, and the lessons I learned.',
+          //   readTime: '8 min read',
+          //   tags: ['machine-learning', 'career', 'learning']
+          // }
         ];
 
         // TODO: Replace with actual markdown file loading

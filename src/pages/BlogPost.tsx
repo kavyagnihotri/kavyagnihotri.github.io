@@ -59,89 +59,89 @@ const BlogPost = () => {
 
         // Sample blog post data - replace with actual markdown parsing
         const samplePosts: Record<string, BlogPostData> = {
-          'welcome-to-my-blog': {
-            title: 'Welcome to My Blog',
-            date: '2024-01-15',
-            content: `# Welcome to My Blog
+//           'welcome-to-my-blog': {
+//             title: 'Welcome to My Blog',
+//             date: '2024-01-15',
+//             content: `# Welcome to My Blog
 
-Hello and welcome to my personal blog! I'm excited to share my thoughts, experiences, and insights with you.
+// Hello and welcome to my personal blog! I'm excited to share my thoughts, experiences, and insights with you.
 
-## What You Can Expect
+// ## What You Can Expect
 
-In this blog, I'll be writing about:
+// In this blog, I'll be writing about:
 
-- **Technology**: My experiences with machine learning, software development, and emerging technologies
-- **Career**: Lessons learned, challenges faced, and growth opportunities
-- **Learning**: New skills I'm developing and resources I find valuable
-- **Life**: Personal reflections and experiences that shape my perspective
+// - **Technology**: My experiences with machine learning, software development, and emerging technologies
+// - **Career**: Lessons learned, challenges faced, and growth opportunities
+// - **Learning**: New skills I'm developing and resources I find valuable
+// - **Life**: Personal reflections and experiences that shape my perspective
 
-## Why I Started This Blog
+// ## Why I Started This Blog
 
-I believe in the power of sharing knowledge and experiences. Through this blog, I hope to:
+// I believe in the power of sharing knowledge and experiences. Through this blog, I hope to:
 
-1. Document my journey as a machine learning engineer
-2. Share insights that might help others in similar paths
-3. Connect with like-minded individuals
-4. Practice articulating complex technical concepts
+// 1. Document my journey as a machine learning engineer
+// 2. Share insights that might help others in similar paths
+// 3. Connect with like-minded individuals
+// 4. Practice articulating complex technical concepts
 
-## Stay Connected
+// ## Stay Connected
 
-I'll be posting regularly, so be sure to check back often. Thank you for visiting, and I look forward to sharing this journey with you!
+// I'll be posting regularly, so be sure to check back often. Thank you for visiting, and I look forward to sharing this journey with you!
 
----
+// ---
 
-*This is just the beginning. More exciting content coming soon!*`,
-            readTime: '3 min read',
-            tags: ['introduction', 'personal'],
-            author: 'Kavyanjali Agnihotri'
-          },
-          'machine-learning-journey': {
-            title: 'My Machine Learning Journey',
-            date: '2024-01-10',
-            content: `# My Machine Learning Journey
+// *This is just the beginning. More exciting content coming soon!*`,
+//             readTime: '3 min read',
+//             tags: ['introduction', 'personal'],
+//             author: 'Kavyanjali Agnihotri'
+//           },
+//           'machine-learning-journey': {
+//             title: 'My Machine Learning Journey',
+//             date: '2024-01-10',
+//             content: `# My Machine Learning Journey
 
-Machine learning has been one of the most fascinating and challenging fields I've had the pleasure to work in. Here's my story.
+// Machine learning has been one of the most fascinating and challenging fields I've had the pleasure to work in. Here's my story.
 
-## The Beginning
+// ## The Beginning
 
-It all started during my undergraduate studies when I first encountered the concept of neural networks. The idea that machines could "learn" patterns from data seemed almost magical.
+// It all started during my undergraduate studies when I first encountered the concept of neural networks. The idea that machines could "learn" patterns from data seemed almost magical.
 
-## Key Milestones
+// ## Key Milestones
 
-### First Project
-My first machine learning project was a simple image classifier. Despite its simplicity, seeing the model correctly identify images was incredibly rewarding.
+// ### First Project
+// My first machine learning project was a simple image classifier. Despite its simplicity, seeing the model correctly identify images was incredibly rewarding.
 
-### Academic Growth
-During my master's program, I dove deeper into:
-- **Deep Learning**: Understanding the mathematics behind neural networks
-- **Computer Vision**: Working with image and video data
-- **Natural Language Processing**: Exploring how machines understand text
+// ### Academic Growth
+// During my master's program, I dove deeper into:
+// - **Deep Learning**: Understanding the mathematics behind neural networks
+// - **Computer Vision**: Working with image and video data
+// - **Natural Language Processing**: Exploring how machines understand text
 
-### Professional Experience
-Transitioning from academia to industry taught me:
-- The importance of data quality over algorithm complexity
-- How to deploy models in production environments
-- The value of interpretable models in business contexts
+// ### Professional Experience
+// Transitioning from academia to industry taught me:
+// - The importance of data quality over algorithm complexity
+// - How to deploy models in production environments
+// - The value of interpretable models in business contexts
 
-## Lessons Learned
+// ## Lessons Learned
 
-1. **Start with simple models**: Often, a well-implemented simple model outperforms a complex one
-2. **Data is king**: Quality data beats fancy algorithms every time
-3. **Continuous learning**: The field evolves rapidly; staying updated is crucial
-4. **Practical impact**: Focus on solving real problems, not just theoretical challenges
+// 1. **Start with simple models**: Often, a well-implemented simple model outperforms a complex one
+// 2. **Data is king**: Quality data beats fancy algorithms every time
+// 3. **Continuous learning**: The field evolves rapidly; staying updated is crucial
+// 4. **Practical impact**: Focus on solving real problems, not just theoretical challenges
 
-## Looking Forward
+// ## Looking Forward
 
-I'm excited about the future of machine learning, particularly in areas like:
-- Explainable AI
-- Edge computing
-- Responsible AI development
+// I'm excited about the future of machine learning, particularly in areas like:
+// - Explainable AI
+// - Edge computing
+// - Responsible AI development
 
-The journey continues, and I'm grateful to be part of this exciting field!`,
-            readTime: '8 min read',
-            tags: ['machine-learning', 'career', 'learning'],
-            author: 'Kavyanjali Agnihotri'
-          }
+// The journey continues, and I'm grateful to be part of this exciting field!`,
+//             readTime: '8 min read',
+//             tags: ['machine-learning', 'career', 'learning'],
+//             author: 'Kavyanjali Agnihotri'
+//           }
         };
 
         const postData = samplePosts[slug];
