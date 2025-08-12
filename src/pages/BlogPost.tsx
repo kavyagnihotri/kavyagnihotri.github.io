@@ -54,7 +54,7 @@ const BlogPost = () => {
       }
       try {
         // Fetch the markdown file from the public/blogs directory
-        const response = await fetch(`../../../public/blogs/${slug}.md`);
+        const response = await fetch(`/blogs/${slug}.md`);
         if (!response.ok) throw new Error('Blog post not found');
         const markdownContent = await response.text();
 

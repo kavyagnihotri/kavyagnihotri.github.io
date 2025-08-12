@@ -122,7 +122,7 @@ startxref
             <Button size="lg" className="group">
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce-subtle" />
                 <a
-                  href="../../public/Agnihotri_cv.pdf"
+                  href="/Agnihotri_cv.pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"

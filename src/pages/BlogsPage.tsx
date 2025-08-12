@@ -101,7 +101,7 @@ const BlogsPage = () => {
   useEffect(() => {
     const loadBlogPosts = async () => {
       try {
-        const posts = await loadMarkdownFiles('../../../public/blogs');
+        const posts = await loadMarkdownFiles('/blogs');
         setBlogPosts(posts);
         setLoading(false);
       } catch (err) {
