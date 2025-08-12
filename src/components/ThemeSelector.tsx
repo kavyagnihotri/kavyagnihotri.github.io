@@ -10,9 +10,9 @@ export const ThemeSelector = () => {
   const themes = [
     { name: 'cute', label: 'Cute', icon: <Palette className="h-4 w-4" />, className: '' },
     { name: 'sea', label: 'Sea', icon: <Waves className="h-4 w-4" />, className: 'theme-sea' },
-    { name: 'beach', label: 'Beach', icon: <Sun className="h-4 w-4" />, className: 'theme-beach' },
+    // { name: 'beach', label: 'Beach', icon: <Sun className="h-4 w-4" />, className: 'theme-beach' },
     { name: 'mountain', label: 'Mountain', icon: <Mountain className="h-4 w-4" />, className: 'theme-mountain' },
-    { name: 'camping', label: 'Camping', icon: <Tent className="h-4 w-4" />, className: 'theme-camping' },
+    // { name: 'camping', label: 'Camping', icon: <Tent className="h-4 w-4" />, className: 'theme-camping' },
     { name: 'forest', label: 'Forest', icon: <TreePine className="h-4 w-4" />, className: 'theme-forest' }
   ];
 

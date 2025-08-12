@@ -10,17 +10,17 @@ export const Volunteering = () => {
       organization: 'TEDxBITSHYD',
       location: 'Hyderabad, India',
       duration: 'During Bachelor\'s',
-      description: 'Contributed to organizing TEDx events at BITS Hyderabad by researching potential speakers and managing logistics for the event.',
+      description: 'Contributed to organizing TEDx events at BITS Hyderabad by researching potential speakers and managing logistics for the event',
       icon: <Mic className="h-8 w-8" />,
       category: 'Event Organization',
       color: 'bg-red-500/10 text-red-600'
     },
     {
-      title: 'Previous Member',
+      title: 'Volunteer Member',
       organization: 'National Service Scheme (NSS)',
       location: 'Hyderabad, India',
       duration: 'During Bachelor\'s',
-      description: 'Participated in community service activities and social initiatives during my undergraduate studies.',
+      description: 'Participated in community service activities and social initiatives during my undergraduate studies',
       icon: <Heart className="h-8 w-8" />,
       category: 'Community Service',
       color: 'bg-orange-500/10 text-orange-600'
@@ -30,7 +30,7 @@ export const Volunteering = () => {
       organization: 'University of Tübingen',
       location: 'Tübingen, Germany',
       duration: 'Current',
-      description: 'Supporting international students with their integration into university life and German culture.',
+      description: 'Supporting international students with their integration into university life and German culture',
       icon: <Users className="h-8 w-8" />,
       category: 'Student Support',
       color: 'bg-blue-500/10 text-blue-600'

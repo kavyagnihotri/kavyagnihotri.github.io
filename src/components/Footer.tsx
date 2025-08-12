@@ -13,7 +13,7 @@ export const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold text-gradient mb-4">Kavyanjali Agnihotri</h3>
             <p className="text-muted-foreground mb-4">
-              Machine Learning Engineer & Software Developer passionate about building innovative AI solutions.
+              Master Machine Learning Student
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
@@ -51,8 +51,8 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Current Status</h4>
             <div className="text-muted-foreground space-y-2">
-              <p>🎓 MS in Machine Learning @ University of Tübingen</p>
-              <p>💼 Student Assistant @ University of Tübingen</p>
+              {/* <p>🎓 M.Sc. in Machine Learning @ University of Tübingen</p> */}
+              <p>💼 Student Assistant @ Scholar Inbox</p>
               <p>🌍 Based in Tübingen, Germany</p>
               <p>📧 Open to opportunities</p>
             </div>

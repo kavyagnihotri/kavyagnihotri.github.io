@@ -7,25 +7,25 @@ export const Hobbies = () => {
     {
       name: 'Baking',
       icon: <ChefHat className="h-8 w-8" />,
-      description: 'Passionate about creating delicious treats and experimenting with new recipes.',
+      description: 'Passionate about creating delicious treats and experimenting with new recipes',
       color: 'bg-orange-500/10 text-orange-600'
     },
     {
       name: 'Swimming',
       icon: <Waves className="h-8 w-8" />,
-      description: 'Regular swimmer who enjoys the mental and physical benefits of this full-body workout.',
+      description: 'Enjoy the mental and physical benefits of this full-body workout',
       color: 'bg-blue-500/10 text-blue-600'
     },
     {
       name: 'Painting',
       icon: <Palette className="h-8 w-8" />,
-      description: 'Creative expression through various painting techniques and artistic mediums.',
+      description: 'Creative expression through different painting techniques',
       color: 'bg-purple-500/10 text-purple-600'
     },
     {
       name: 'Light Exercising',
       icon: <Dumbbell className="h-8 w-8" />,
-      description: 'Maintaining physical fitness through regular light exercise and wellness routines.',
+      description: 'Maintaining physical fitness through regular light exercise and wellness routines',
       color: 'bg-green-500/10 text-green-600'
     }
   ];

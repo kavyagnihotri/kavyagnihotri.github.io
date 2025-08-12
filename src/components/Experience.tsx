@@ -7,11 +7,11 @@ export const Experience = () => {
   const experiences = [
     {
       title: 'Student Assistant',
-      company: 'Eberhard Karls University of Tübingen',
+      company: 'Scholar Inbox • Eberhard Karls University of Tübingen',
       location: 'Tübingen, Germany',
       duration: 'December 2024 to Present',
       type: 'Part-time',
-      description: 'Contributing to the development of Scholar Inbox, a comprehensive platform for academic research.',
+      description: 'Contributing to the development of Scholar Inbox, a comprehensive platform for academic research',
       achievements: [
         // 'Developing Scholar Inbox platform using Python, PostgreSQL, and React',
         // 'Implementing full-stack solutions for academic workflow management',
@@ -26,7 +26,7 @@ export const Experience = () => {
       location: 'Bengaluru, India',
       duration: 'January 2024 to June 2024, June 2023 to July 2023',
       type: 'Internship',
-      description: 'Contributed to multiple projects focusing on software optimization, automation, and quality assurance.',
+      description: 'Contributed to multiple projects focusing on software optimization, automation, and quality assurance',
       achievements: [
         'Updated Java libraries across multiple repositories, improving system compatibility',
         'Enhanced error logging in Secure Network Analytics, reducing debugging time',
@@ -43,7 +43,7 @@ export const Experience = () => {
     //   location: 'Bengaluru, India',
     //   duration: 'June 2023 - July 2023',
     //   type: 'Internship',
-    //   description: 'Focused on automation and workflow optimization projects during first internship tenure.',
+    //   description: 'Focused on automation and workflow optimization projects during first internship tenure',
     //   achievements: [
     //     'Automated directory data extraction using Python and Bash scripting',
     //     'Optimized existing workflows, reducing manual processing time by 60%',
@@ -58,7 +58,7 @@ export const Experience = () => {
       location: 'Chennai, India (Remote)',
       duration: 'May 2022 to July 2022',
       type: 'Internship',
-      description: 'Contributed to NLP research projects, focusing on medical entity recognition using advanced language models.',
+      description: 'Contributed to NLP research projects, focusing on medical entity recognition using advanced language models',
       achievements: [
         'Implemented zero-shot and few-shot learning techniques',
         'Worked with GPT-6B and GPT-NeoX models for medical text processing',

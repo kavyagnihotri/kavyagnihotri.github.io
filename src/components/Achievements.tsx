@@ -6,27 +6,27 @@ import { Trophy, Award, Medal, Star, Target, Users } from 'lucide-react';
 export const Achievements = () => {
   const achievements = [
     {
-      title: 'ELIZA Stipend 2024-26',
-      organization: 'Zuse School ELIZA',
-      description: 'Awarded a 24-month stipend for academic excellence in machine learning research.',
+      title: 'ELIZA Stipend',
+      organization: 'DAAD Zuse School ELIZA',
+      description: 'Awarded a 24-month stipend for academics in machine learning',
       icon: <Trophy className="h-8 w-8" />,
       category: 'Scholarship',
-      year: '2024',
+      year: '2024 - 2026',
       color: 'bg-yellow-500/10 text-yellow-600'
     },
     {
       title: 'AI Incubator Batch 6 Selection',
-      organization: 'AI Incubator Program',
-      description: 'Selected for prestigious AI Incubator program for innovative AI projects.',
+      organization: 'Cyber Valley, Tübingen',
+      description: 'Selected for prestigious AI Incubator program for innovative AI projects',
       icon: <Star className="h-8 w-8" />,
       category: 'Program',
       year: '2025',
       color: 'bg-purple-500/10 text-purple-600'
     },
     {
-      title: 'JPMC Code for Good Hackathon Finalist',
-      organization: 'JPMorgan Chase & Co.',
-      description: 'Selected as finalist among 25+ teams for developing impactful social good solutions.',
+      title: 'Code for Good Hackathon Finalist',
+      organization: 'JPMorgan Chase & Co',
+      description: 'Selected as finalist among 25+ teams for developing impactful social good solutions',
       icon: <Medal className="h-8 w-8" />,
       category: 'Hackathon',
       year: '2023',
@@ -35,25 +35,25 @@ export const Achievements = () => {
     {
       title: 'Google Girl Hackathon - Top 2.5%',
       organization: 'Google',
-      description: 'Ranked in the top 2.5% of participants in Google\'s prestigious hackathon for women in tech.',
+      description: 'Ranked in the top 2.5% of participants in Google\'s prestigious hackathon for women in tech',
       icon: <Award className="h-8 w-8" />,
       category: 'Hackathon',
       year: '2023',
       color: 'bg-green-500/10 text-green-600'
     },
-    {
-      title: 'ICPC Amritapuri Regionals',
-      organization: 'ACM ICPC',
-      description: 'Secured 1197th rank out of 5000+ competitors in the prestigious programming contest.',
-      icon: <Target className="h-8 w-8" />,
-      category: 'Competition',
-      year: '2023',
-      color: 'bg-orange-500/10 text-orange-600'
-    },
+    // {
+    //   title: 'ICPC Amritapuri Regionals',
+    //   organization: 'ACM ICPC',
+    //   description: 'Secured 1197th rank out of 5000+ competitors in the prestigious programming contest',
+    //   icon: <Target className="h-8 w-8" />,
+    //   category: 'Competition',
+    //   year: '2023',
+    //   color: 'bg-orange-500/10 text-orange-600'
+    // },
     {
       title: 'JEE Advanced 2020',
       organization: 'National Testing Agency',
-      description: 'Achieved outstanding rank of 4860 among 43,000+ candidates in India\'s toughest engineering exam.',
+      description: 'Achieved outstanding rank of 4860 among 43,000+ candidates in India\'s toughest engineering exam',
       icon: <Trophy className="h-8 w-8" />,
       category: 'Examination',
       year: '2020',
@@ -62,7 +62,7 @@ export const Achievements = () => {
     {
       title: 'Academic Performance Scholarship',
       organization: 'State Government',
-      description: 'Awarded by the state government for exceptional academic merit and performance.',
+      description: 'Awarded by the state government for exceptional academic merit and performance',
       icon: <Award className="h-8 w-8" />,
       category: 'Scholarship',
       year: '2020',

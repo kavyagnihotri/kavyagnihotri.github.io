@@ -8,32 +8,22 @@ export const Skills = () => {
     {
       title: 'Programming Languages',
       icon: <Code className="h-6 w-6" />,
-      skills: ['Python', 'Java', 'C++', 'JavaScript', 'C', 'HTML/CSS']
+      skills: ['Python', 'Java', 'C++', 'JavaScript', 'C', 'SQL', 'HTML/CSS']
     },
     {
-      title: 'Machine Learning & AI',
+      title: 'Machine Learning',
       icon: <Brain className="h-6 w-6" />,
-      skills: ['PyTorch', 'TensorFlow', 'BERT', 'GPT Models', 'Computer Vision', 'NLP', 'Deep Learning', 'Neural Networks']
+      skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'NLTK', 'Transformers']
     },
     {
       title: 'Web Technologies',
       icon: <Globe className="h-6 w-6" />,
-      skills: ['React', 'Node.js', 'Express.js', 'MongoDB', 'MERN Stack', 'Django']
+      skills: ['React', 'Node.js', 'Express.js', 'MongoDB', 'MERN Stack', 'Django', 'PostgreSQL', 'MySQL']
     },
     {
       title: 'Tools & Technologies',
       icon: <Wrench className="h-6 w-6" />,
       skills: ['Docker', 'Jenkins', 'Git', 'Postman', 'Azure AI Services', 'Selenium']
-    },
-    {
-      title: 'Data Science & Analytics',
-      icon: <Database className="h-6 w-6" />,
-      skills: ['NumPy', 'Pandas', 'PostgreSQL', 'MySQL', 'NLTK', 'Data Visualization']
-    },
-    {
-      title: 'Development Practices',
-      icon: <GitBranch className="h-6 w-6" />,
-      skills: ['Unit Testing', 'CI/CD', 'Agile', 'Code Review', 'Documentation', 'Version Control']
     }
   ];
 

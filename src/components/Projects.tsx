@@ -6,8 +6,21 @@ import { Code, Brain, Database, Search, Image, Cpu, Users } from 'lucide-react';
 export const Projects = () => {
   const projects = [
     {
+      title: 'Generating Lecture Notes',
+      description: 'Python-based system that creates structured lecture notes using prerequisite knowledge graphs',
+      icon: <Brain className="h-8 w-8" />,
+      technologies: ['Python', 'BeautifulSoup', 'PyTorch', 'BERT', 'SimpleTransformers', 'LDA'],
+      features: [
+        'Created a Prerequisite Knowledge Graph via hub and authority scores to combine data on different topics to develop scientific lecture notes to understand a concept',
+        'Preprocessed the scraped data and fine-tuned a BERT model using SimpleTransformers to predict the optimal placement for images, pseudocodes, and formulas within the definition',
+        'Leveraging LDA segmentation and bagging techniques notably minimized bias, improving the depth and inclusivity of the lecture notes'
+      ],
+      category: 'NLP / Knowledge Graphs',
+      timeline: 'January 2023 - March 2024'
+    },
+    {
       title: 'ProSys - Project Management System',
-      description: 'MERN Stack Application for managing project proposals, applications, project approvals and submissions for admin, students, and professors.',
+      description: 'MERN Stack Application for managing project proposals, applications, project approvals and submissions for admin, students, and professors',
       icon: <Database className="h-8 w-8" />,
       technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'MERN Stack'],
       features: [
@@ -18,21 +31,8 @@ export const Projects = () => {
       timeline: 'January 2023 - April 2023'
     },
     {
-      title: 'Generating Lecture Notes',
-      description: 'Python-based system that creates structured lecture notes using prerequisite knowledge graphs and advanced NLP techniques.',
-      icon: <Brain className="h-8 w-8" />,
-      technologies: ['Python', 'BeautifulSoup', 'PyTorch', 'BERT', 'SimpleTransformers', 'LDA'],
-      features: [
-        'Created a Prerequisite Knowledge Graph via hub and authority scores to combine data on different topics to develop scientific lecture notes to understand a concept',
-        'Preprocessed the scraped data and fine-tuned a BERT model using SimpleTransformers to predict the optimal placement for images, pseudocodes, and formulas within the definition',
-        'Leveraging LDA segmentation and bagging techniques notably minimized bias, improving the depth and inclusivity of the lecture notes'
-      ],
-      category: 'AI/ML',
-      timeline: 'January 2023 - March 2024'
-    },
-    {
       title: 'Boolean Retrieval System & Page Ranking',
-      description: 'Information retrieval system with advanced query processing and ranking algorithms for efficient document search.',
+      description: 'Information retrieval system with query processing and ranking algorithms for efficient document search',
       icon: <Search className="h-8 w-8" />,
       technologies: ['Python', 'NLTK', 'PageRank', 'HITS Algorithm', 'Levenshtein Distance'],
       features: [
@@ -41,12 +41,12 @@ export const Projects = () => {
         'Implemented Page Rank algorithm using Power Iteration method to rank web pages for a given query and analyzed Random Teleportation with varying probabilities',
         'Implemented HITS Algorithm to evaluate web pages based on hubs score and authority score'
       ],
-      category: 'NLP / Information Retrieval',
+      category: 'Information Retrieval',
       timeline: 'March 2022 - May 2022'
     },
     {
       title: 'Neural Style Transfer',
-      description: 'Image stylization system using deep learning with enhanced VGGNet architecture and novel depth-preserving loss function.',
+      description: 'Image stylization system using deep learning with enhanced VGGNet architecture and novel depth-preserving loss function',
       icon: <Image className="h-8 w-8" />,
       technologies: ['Python', 'PyTorch', 'TensorFlow', 'VGGNet', 'ADAM Optimizer'],
       features: [
@@ -58,7 +58,7 @@ export const Projects = () => {
     },
     {
       title: 'Spatial Indexing with QuadTrees',
-      description: 'High-performance geometric query processing system implemented in C++ using QuadTree data structures.',
+      description: 'High-performance geometric query processing system implemented in C++ using QuadTree data structures',
       icon: <Code className="h-8 w-8" />,
       technologies: ['C++', 'QuadTrees', 'Data Structures', 'Spatial Indexing'],
       features: [
@@ -70,7 +70,7 @@ export const Projects = () => {
     },
     {
       title: 'Matrix Multiplication with OS Concepts',
-      description: 'Multi-threaded matrix multiplication system with scheduling algorithm analysis and synchronization.',
+      description: 'Multi-threaded matrix multiplication system with scheduling algorithm synchronization',
       icon: <Cpu className="h-8 w-8" />,
       technologies: ['Linux', 'C', 'Multi-threading', 'Synchronization', 'OS Concepts'],
       features: [
@@ -83,7 +83,7 @@ export const Projects = () => {
     },
     {
       title: 'Chatbot for Visually Impaired Students',
-      description: 'Multilingual chatbot using NLP techniques to assist visually impaired students with natural language processing.',
+      description: 'Multilingual chatbot using NLP techniques to assist visually impaired students',
       icon: <Users className="h-8 w-8" />,
       technologies: ['Python', 'Microsoft AI Tools', 'NLP', 'Intent Classification'],
       features: [
@@ -96,9 +96,9 @@ export const Projects = () => {
   ];
 
   const categoryColors = {
-    'AI/ML': 'bg-blue-500/10 text-blue-600',
+    'NLP / Knowledge Graphs': 'bg-blue-500/10 text-blue-600',
     'Full-stack': 'bg-green-500/10 text-green-600',
-    'NLP / Information Retrieval': 'bg-purple-500/10 text-purple-600',
+    'Information Retrieval': 'bg-purple-500/10 text-purple-600',
     'Computer Vision': 'bg-orange-500/10 text-orange-600',
     'Algorithms': 'bg-red-500/10 text-red-600',
     'Systems': 'bg-yellow-500/10 text-yellow-600',
@@ -110,7 +110,7 @@ export const Projects = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Projects</h2>
-          <p className="text-xl text-muted-foreground">Showcasing my technical expertise and innovation</p>
+          <p className="text-xl text-muted-foreground">Showcasing my technical experiments and experience</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

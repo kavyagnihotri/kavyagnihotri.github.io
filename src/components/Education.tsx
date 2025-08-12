@@ -10,7 +10,7 @@ export const Education = () => {
       institution: 'Eberhard Karls University of Tübingen',
       location: 'Tübingen, Germany',
       duration: '2024 - 2026 (Expected)',
-      // description: 'Specializing in deep learning, neural networks, and AI applications with focus on practical implementations.',
+      // description: 'Specializing in deep learning, neural networks, and AI applications with focus on practical implementations',
       coursework: ['Deep Learning', 'Natural Language Processing', 'Probalistic Machine Learning', 'Statistical Machine Learning'],
     },
     {
@@ -19,17 +19,18 @@ export const Education = () => {
       location: 'Hyderabad, India',
       duration: '2020 - 2024',
       gpa: '8.49/10',
-      description: 'Comprehensive computer science education with strong foundation in algorithms, software engineering, and mathematics.',
+      description: 'Comprehensive computer science education with strong foundation in algorithms, software engineering, and mathematics',
       coursework: [
-        'Data Structures and Algorithms',
         'Machine Learning',
         'Deep Learning',
-        // 'Probability and Statistics',
-        // 'Linear Algebra',
+        'Data Visualization',
+        'Data Structures and Algorithms',
         'Software Engineering',
         'Database Systems',
         'Operating Systems',
         'Computer Networks'
+        // 'Probability and Statistics',
+        // 'Linear Algebra',
       ],
     },
   ];

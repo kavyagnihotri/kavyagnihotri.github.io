@@ -126,8 +126,8 @@ export const Contact = () => {
               <h4 className="font-semibold mb-3">I'm interested in:</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Full-time opportunities in ML/AI</li>
-                <li>• Research collaborations</li>
-                <li>• Open source contributions</li>
+                <li>• Research contributions</li>
+                {/* <li>• Open source contributions</li> */}
               </ul>
             </div>
           </div>

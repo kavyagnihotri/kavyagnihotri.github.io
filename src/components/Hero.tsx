@@ -110,11 +110,11 @@ startxref
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up">
               Machine Learning Engineer & Software Developer
+              {/* M.Sc. in Machine Learning */}
             </p>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in-up">
-              MS in Machine Learning @ University of Tübingen | 
-              Passionate about AI, Deep Learning, and Building Innovative Solutions
+              Passionate about Deep Learning, and Building Innovative Solutions
             </p>
           </div>
 
