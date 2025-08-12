@@ -16,6 +16,19 @@ public/
 └── ...
 ```
 
+In `index.json`, add the following entry for your blog post:
+
+```json
+  {
+    "slug": "welcome-to-my-blog",
+    "title": "Welcome to My Blog",
+    "date": "2024-01-15",
+    "readTime": "3 min read",
+    "tags": ["introduction", "personal"],
+    "author": "Kavyanjali Agnihotri"
+  }
+```
+
 ## Markdown File Format
 
 Each blog post should be a markdown file with the following structure:

@@ -119,9 +119,16 @@ startxref
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-in-right">
-            <Button size="lg" className="group" onClick={downloadCV}>
+            <Button size="lg" className="group">
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce-subtle" />
-              Download CV
+                <a
+                  href="../../public/Agnihotri_cv.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download CV
+                </a>
             </Button>
             <Button variant="outline" size="lg" onClick={scrollToAbout}>
               Learn More

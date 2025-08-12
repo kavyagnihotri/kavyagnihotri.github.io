@@ -6,6 +6,8 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calendar, Clock, AlertCircle } from 'lucide-react';
+import matter from 'gray-matter';
+import { marked } from 'marked';
 
 /**
  * Blog Post Metadata Interface
@@ -50,15 +52,47 @@ const BlogPost = () => {
         setLoading(false);
         return;
       }
-
       try {
-        // TODO: Replace with actual markdown file loading
-        // const response = await fetch(`/blogs/${slug}.md`);
-        // const markdownContent = await response.text();
-        // const parsedPost = parseMarkdown(markdownContent);
+        // Fetch the markdown file from the public/blogs directory
+        const response = await fetch(`../../../public/blogs/${slug}.md`);
+        if (!response.ok) throw new Error('Blog post not found');
+        const markdownContent = await response.text();
 
-        // Sample blog post data - replace with actual markdown parsing
-        const samplePosts: Record<string, BlogPostData> = {
+        // Parse frontmatter and content
+        const { data, content } = matter(markdownContent);
+
+        // Convert markdown to HTML
+        const htmlContent = await marked(content);
+
+        // Set the post data
+        setPost({
+          title: data.title || 'Untitled',
+          date: data.date || '',
+          content: htmlContent,
+          readTime: data.readTime,
+          tags: data.tags,
+          author: data.author,
+        });
+        setError(null);
+      } catch (err) {
+        setError('Failed to load blog post');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBlogPost();
+  }, [slug]);
+
+
+//       try {
+//         // TODO: Replace with actual markdown file loading
+//         const response = await fetch(`/blogs/${slug}.md`);
+//         const markdownContent = await response.text();
+//         const parsedPost = parseMarkdown(markdownContent);
+
+//         // Sample blog post data - replace with actual markdown parsing
+//         const samplePosts: Record<string, BlogPostData> = {
 //           'welcome-to-my-blog': {
 //             title: 'Welcome to My Blog',
 //             date: '2024-01-15',
@@ -142,23 +176,23 @@ const BlogPost = () => {
 //             tags: ['machine-learning', 'career', 'learning'],
 //             author: 'Kavyanjali Agnihotri'
 //           }
-        };
+//         };
 
-        const postData = samplePosts[slug];
-        if (!postData) {
-          setError('Blog post not found');
-        } else {
-          setPost(postData);
-        }
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to load blog post');
-        setLoading(false);
-      }
-    };
+//         const postData = samplePosts[slug];
+//         if (!postData) {
+//           setError('Blog post not found');
+//         } else {
+//           setPost(postData);
+//         }
+//         setLoading(false);
+//       } catch (err) {
+//         setError('Failed to load blog post');
+//         setLoading(false);
+//       }
+//     };
 
-    loadBlogPost();
-  }, [slug]);
+  //   loadBlogPost();
+  // }, [slug]);
 
   /**
    * Formats date for display
@@ -323,9 +357,10 @@ const BlogPost = () => {
           </header>
 
           {/* Article Content */}
-          <div className="prose prose-gray dark:prose-invert max-w-none">
-            {renderMarkdown(post.content)}
-          </div>
+          <div
+            className="prose prose-gray dark:prose-invert max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </article>
       </main>
 

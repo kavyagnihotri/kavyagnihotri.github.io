@@ -11,13 +11,22 @@ import { useNavigate } from 'react-router-dom';
  * Blog Post Interface
  * Represents a blog post with metadata extracted from markdown files
  */
-interface BlogPost {
+type BlogPost = {
   slug: string;
   title: string;
   date: string;
   excerpt?: string;
   readTime?: string;
   tags?: string[];
+};
+
+
+// Utility function to load blog posts from a manifest file
+async function loadMarkdownFiles(directory: string): Promise<BlogPost[]> {
+  const response = await fetch(`${directory}/index.json`);
+  if (!response.ok) throw new Error('Failed to load blog manifest');
+  const posts = await response.json();
+  return posts;
 }
 
 /**
@@ -49,36 +58,51 @@ const BlogsPage = () => {
    * This function attempts to load markdown files from the /blogs directory
    * and extract metadata from them.
    */
+  // useEffect(() => {
+  //   const loadBlogPosts = async () => {
+  //     try {
+  //       // In a real implementation, you would dynamically discover markdown files
+  //       // For now, we'll create a sample structure that developers can follow
+        
+  //       // Sample blog posts - replace this with actual file discovery
+  //       // const samplePosts: BlogPost[] = [
+  //       //   {
+  //       //     slug: 'welcome-to-my-blog',
+  //       //     title: 'Welcome to My Blog',
+  //       //     date: '2024-01-15',
+  //       //     excerpt: 'This is my first blog post where I introduce myself and talk about what you can expect from this blog.',
+  //       //     readTime: '3 min read',
+  //       //     tags: ['introduction', 'personal']
+  //       //   },
+  //       //   {
+  //       //     slug: 'machine-learning-journey',
+  //       //     title: 'My Machine Learning Journey',
+  //       //     date: '2024-01-10',
+  //       //     excerpt: 'A reflection on my journey into machine learning, the challenges I faced, and the lessons I learned.',
+  //       //     readTime: '8 min read',
+  //       //     tags: ['machine-learning', 'career', 'learning']
+  //       //   }
+  //       // ];
+
+  //       // TODO: Replace with actual markdown file loading
+  //       // const posts = await loadMarkdownFiles('/blogs');
+        
+  //       setBlogPosts(samplePosts);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       setError('Failed to load blog posts');
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   loadBlogPosts();
+  // }, []);
+
   useEffect(() => {
     const loadBlogPosts = async () => {
       try {
-        // In a real implementation, you would dynamically discover markdown files
-        // For now, we'll create a sample structure that developers can follow
-        
-        // Sample blog posts - replace this with actual file discovery
-        const samplePosts: BlogPost[] = [
-          // {
-          //   slug: 'welcome-to-my-blog',
-          //   title: 'Welcome to My Blog',
-          //   date: '2024-01-15',
-          //   excerpt: 'This is my first blog post where I introduce myself and talk about what you can expect from this blog.',
-          //   readTime: '3 min read',
-          //   tags: ['introduction', 'personal']
-          // },
-          // {
-          //   slug: 'machine-learning-journey',
-          //   title: 'My Machine Learning Journey',
-          //   date: '2024-01-10',
-          //   excerpt: 'A reflection on my journey into machine learning, the challenges I faced, and the lessons I learned.',
-          //   readTime: '8 min read',
-          //   tags: ['machine-learning', 'career', 'learning']
-          // }
-        ];
-
-        // TODO: Replace with actual markdown file loading
-        // const posts = await loadMarkdownFiles('/blogs');
-        
-        setBlogPosts(samplePosts);
+        const posts = await loadMarkdownFiles('../../../public/blogs');
+        setBlogPosts(posts);
         setLoading(false);
       } catch (err) {
         setError('Failed to load blog posts');
@@ -214,8 +238,7 @@ const BlogsPage = () => {
               <FileText className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">No blog posts yet</h3>
               <p className="text-muted-foreground max-w-md mx-auto">
-                Blog posts will appear here when markdown files are added to the blogs directory.
-                Create your first post by adding a .md file to /public/blogs/
+                Blog posts will appear here.
               </p>
             </div>
           )}
