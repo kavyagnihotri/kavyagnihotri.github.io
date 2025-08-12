@@ -27,8 +27,8 @@ export const About = () => {
                   <h3 className="text-xl font-semibold">Current Focus</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Currently pursuing Master of Science in Machine Learning at Eberhard Karls University of Tübingen, 
-                  with expected graduation in 2026. My research interests span deep learning, neural networks, and AI applications.
+                  Currently pursuing Master of Science in Machine Learning at Eberhard Karls University of Tübingen.
+                  My research interests span Deep Learning, Natural Language Processing and Large Language Models.
                 </p>
               </CardContent>
             </Card>
@@ -40,8 +40,7 @@ export const About = () => {
                   <h3 className="text-xl font-semibold">Location</h3>
                 </div>
                 <p className="text-muted-foreground">
-                  Currently based in Tübingen, Germany. Originally from India, bringing diverse cultural perspectives 
-                  to my work in technology and research.
+                  Currently in Tübingen, Germany. Originally from India.
                 </p>
               </CardContent>
             </Card>
@@ -67,23 +66,21 @@ export const About = () => {
             <h3 className="text-2xl font-semibold mb-4">My Story</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I'm a highly accomplished and driven individual with a strong academic background in computer science 
+                I'm a highly driven individual with a strong academic background in computer science 
                 and machine learning. My journey in technology began with my Bachelor's degree in Computer Science 
-                from BITS Pilani, where I achieved a CGPA of 8.49/10.
+                from BITS Pilani - Hyderabad Campus.
               </p>
               <p>
-                Throughout my academic and professional journey, I've gained valuable experience through internships 
-                at leading companies like Cisco and Palmtree Infotech, where I've worked on cutting-edge projects 
+                Throughout my academic journey, I've gained valuable experience through internships 
+                at companies like Cisco and Palmtree Infotech, where I've worked on projects 
                 involving natural language processing, automated testing, and system optimization.
               </p>
               <p>
-                My passion lies in bridging theoretical knowledge with practical applications, evident in my diverse 
-                portfolio of projects ranging from neural style transfer to building full-stack applications. 
-                I'm particularly interested in the intersection of AI and human-computer interaction.
+                My passion lies in bridging theoretical knowledge with practical applications.
+                I'm particularly interested in the intersection of AI, human-computer interaction and NLP.
               </p>
               <p>
-                When I'm not coding or researching, you'll find me exploring new technologies, contributing to 
-                open-source projects, or sharing knowledge with the developer community.
+                When I'm not coding or researching, you'll find me reading books, baking cakes or learning something about psychology.
               </p>
             </div>
           </div>

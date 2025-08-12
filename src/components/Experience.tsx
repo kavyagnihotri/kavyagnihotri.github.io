@@ -9,27 +9,27 @@ export const Experience = () => {
       title: 'Student Assistant',
       company: 'Eberhard Karls University of Tübingen',
       location: 'Tübingen, Germany',
-      duration: '2024 - Present',
+      duration: 'December 2024 to Present',
       type: 'Part-time',
-      description: 'Contributing to the development of Scholar Inbox, a comprehensive platform for academic research management.',
+      description: 'Contributing to the development of Scholar Inbox, a comprehensive platform for academic research.',
       achievements: [
-        'Developing Scholar Inbox platform using Python, PostgreSQL, and React',
-        'Implementing full-stack solutions for academic workflow management',
-        'Collaborating with research teams on user experience optimization',
-        'Building scalable database architectures for research data management'
+        // 'Developing Scholar Inbox platform using Python, PostgreSQL, and React',
+        // 'Implementing full-stack solutions for academic workflow management',
+        // 'Collaborating with research teams on user experience optimization',
+        // 'Building scalable database architectures for research data management'
       ],
-      technologies: ['Python', 'PostgreSQL', 'React', 'Full-stack Development']
+      technologies: ['Deep Learning', 'Python', 'PostgreSQL', 'React', 'Full-stack Development']
     },
     {
       title: 'Technical Intern',
       company: 'Cisco Systems',
       location: 'Bengaluru, India',
-      duration: 'January 2024 - June 2024',
+      duration: 'January 2024 to June 2024, June 2023 to July 2023',
       type: 'Internship',
-      description: 'Contributed to multiple high-impact projects focusing on software optimization, automation, and quality assurance.',
+      description: 'Contributed to multiple projects focusing on software optimization, automation, and quality assurance.',
       achievements: [
         'Updated Java libraries across multiple repositories, improving system compatibility',
-        'Enhanced error logging in Secure Network Analytics, reducing debugging time by 40%',
+        'Enhanced error logging in Secure Network Analytics, reducing debugging time',
         'Developed Jenkins pipeline for automated error report generation',
         'Built QA bot for module updates, streamlining testing processes',
         'Increased unit test coverage to over 95% across targeted modules',
@@ -37,36 +37,34 @@ export const Experience = () => {
       ],
       technologies: ['Java', 'Jenkins', 'Docker', 'Python', 'Bash Scripting', 'Unit Testing']
     },
-    {
-      title: 'Technical Intern',
-      company: 'Cisco Systems',
-      location: 'Bengaluru, India',
-      duration: 'June 2023 - July 2023',
-      type: 'Internship',
-      description: 'Focused on automation and workflow optimization projects during first internship tenure.',
-      achievements: [
-        'Automated directory data extraction using Python and Bash scripting',
-        'Optimized existing workflows, reducing manual processing time by 60%',
-        'Collaborated with cross-functional teams on system integration projects',
-        'Contributed to documentation and knowledge sharing initiatives'
-      ],
-      technologies: ['Python', 'Bash Scripting', 'Automation', 'System Integration']
-    },
+    // {
+    //   title: 'Technical Intern',
+    //   company: 'Cisco Systems',
+    //   location: 'Bengaluru, India',
+    //   duration: 'June 2023 - July 2023',
+    //   type: 'Internship',
+    //   description: 'Focused on automation and workflow optimization projects during first internship tenure.',
+    //   achievements: [
+    //     'Automated directory data extraction using Python and Bash scripting',
+    //     'Optimized existing workflows, reducing manual processing time by 60%',
+    //     'Collaborated with cross-functional teams on system integration projects',
+    //     'Contributed to documentation and knowledge sharing initiatives'
+    //   ],
+    //   technologies: ['Python', 'Bash Scripting', 'Automation', 'System Integration']
+    // },
     {
       title: 'NLP Research Intern',
       company: 'Palmtree Infotech',
-      location: 'Chennai, India',
-      duration: 'Summer 2023',
+      location: 'Chennai, India (Remote)',
+      duration: 'May 2022 to July 2022',
       type: 'Internship',
-      description: 'Specialized in natural language processing applications for medical entity recognition using advanced language models.',
+      description: 'Contributed to NLP research projects, focusing on medical entity recognition using advanced language models.',
       achievements: [
-        'Developed NLP solutions for medicine multi-entity recognition',
         'Implemented zero-shot and few-shot learning techniques',
         'Worked with GPT-6B and GPT-NeoX models for medical text processing',
         'Achieved significant accuracy improvements in entity extraction tasks',
-        'Contributed to research publications and technical documentation'
       ],
-      technologies: ['NLP', 'GPT-6B', 'GPT-NeoX', 'Zero-shot Learning', 'Few-shot Learning', 'Medical AI']
+      technologies: ['NLP', 'GPT-6B', 'GPT-NeoX', 'Zero-shot Learning', 'Few-shot Learning', 'Medical NLP']
     }
   ];
 
@@ -108,17 +106,20 @@ export const Experience = () => {
 
                 <p className="text-muted-foreground mb-6">{exp.description}</p>
 
-                <div className="space-y-4">
-                  <h4 className="font-semibold">Key Achievements:</h4>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-muted-foreground">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/* Only show if achievements is not empty and defined */}
+                {exp.achievements && exp.achievements.length > 0 && (
+                  <div className="space-y-4 mb-6">
+                    <h4 className="font-semibold">Key Achievements:</h4>
+                    <ul className="space-y-2">
+                      {exp.achievements.map((achievement, i) => (
+                        <li key={i} className="flex items-start">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-muted-foreground">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 <div className="mt-6">
                   <h4 className="font-semibold mb-3">Technologies Used:</h4>
