@@ -23,36 +23,35 @@ export const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="section-padding">
+    <section id="experience" className="w-full">
+      {/* Centering container restored with mx-auto and horizontal padding */}
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-        {/* Reduced margin-bottom */}
-        <h2 className="text-2xl font-bold mb-3 text-foreground">Experience</h2>
+        
+        {/* Zero margin bottom keeps heading touching the first item */}
+        <h2 className="text-2xl font-bold text-foreground leading-none mb-0">Experience</h2>
 
-        {/* Reduced vertical spacing between different jobs */}
-        <div className="space-y-4">
+        <div className="flex flex-col">
           {experiences.map((exp, index) => (
-            /* Reduced vertical spacing between Company and Role */
-            <div key={index} className="space-y-0">
-              <div className="flex items-baseline justify-between gap-4">
-                <h3 className="text-lg font-semibold">{exp.company}</h3>
-                <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <MapPin className="h-3.5 w-3.5" />
+            /* mb-0 ensures no gap between the end of one job and start of next */
+            <div key={index} className="flex flex-col mb-0">
+              <div className="flex items-baseline justify-between gap-2">
+                <h3 className="text-lg font-semibold leading-none">{exp.company}</h3>
+                <div className="flex items-center gap-1 text-sm text-muted-foreground leading-none">
+                  <MapPin className="h-3 w-3" />
                   <span className="whitespace-nowrap">{exp.location}</span>
                 </div>
               </div>
-              <div className="flex items-baseline justify-between gap-4">
-                <p className="text-base text-primary font-medium">{exp.title}</p>
-                <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <Calendar className="h-3.5 w-3.5" />
+              
+              <div className="flex items-baseline justify-between gap-2">
+                <p className="text-base text-primary font-medium leading-none">{exp.title}</p>
+                <div className="flex items-center gap-1 text-sm text-muted-foreground leading-none">
+                  <Calendar className="h-3 w-3" />
                   <span className="whitespace-nowrap">{exp.duration}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Horizontal Line at the end of section */}
-        <div className="mt-6 border-b border-border"></div>
       </div>
     </section>
   );
