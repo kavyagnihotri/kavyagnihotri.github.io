@@ -1,164 +1,132 @@
 
-import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, GraduationCap, Languages } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
 
 export const Hero = () => {
-  const scrollToAbout = () => {
-    const element = document.querySelector('#about');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const downloadCV = () => {
-    // Create a dummy PDF blob (you can replace this with your actual CV)
-    const dummyPDFContent = `%PDF-1.4
-1 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
-endobj
-
-2 0 obj
-<<
-/Type /Pages
-/Kids [3 0 R]
-/Count 1
->>
-endobj
-
-3 0 obj
-<<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 612 792]
-/Contents 4 0 R
-/Resources <<
-/Font <<
-/F1 5 0 R
->>
->>
->>
-endobj
-
-4 0 obj
-<<
-/Length 44
->>
-stream
-BT
-/F1 24 Tf
-100 700 Td
-(Kavyanjali Agnihotri - CV) Tj
-ET
-endstream
-endobj
-
-5 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica
->>
-endobj
-
-xref
-0 6
-0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000274 00000 n 
-0000000370 00000 n 
-trailer
-<<
-/Size 6
-/Root 1 0 R
->>
-startxref
-456
-%%EOF`;
-
-    const blob = new Blob([dummyPDFContent], { type: 'application/pdf' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Kavyanjali_Agnihotri_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
-
   return (
-    <section className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"></div>
-      </div>
+    <section className="pt-20 pb-4">
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <div className="grid lg:grid-cols-[260px,1fr] gap-8 items-start">
+          {/* Left sidebar - Profile Picture and Quick Info */}
+          <aside className="lg:sticky lg:top-24">
+            <Card className="p-4 border shadow-sm">
+              {/* Profile Picture */}
+              <div className="mb-3">
+                <img
+                  src="/profile/profile.jpg"
+                  alt="Kavyanjali Agnihotri"
+                  className="w-full aspect-square object-cover rounded-lg border-2 border-border"
+                  loading="lazy"
+                />
+              </div>
 
-      <div className="container mx-auto px-4 py-20 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-gradient">Kavyanjali</span>
-              <br />
-              <span className="text-foreground">Agnihotri</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up">
-              Machine Learning Engineer & Software Developer
-              {/* M.Sc. in Machine Learning */}
-            </p>
-            
-            <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in-up">
-              Passionate about Deep Learning, and Building Innovative Solutions
-            </p>
-          </div>
+              {/* Quick Bio */}
+              <div className="space-y-2 text-sm border-b pb-3">
+                <div className="flex items-start gap-2">
+                  <GraduationCap className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">M.Sc. Machine Learning</p>
+                    <p className="text-muted-foreground text-xs">University of Tübingen</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-2">
+                  <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-muted-foreground text-xs">Tübingen, Germany</p>
+                  </div>
+                </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-in-right">
-            <Button size="lg" className="group">
-              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce-subtle" />
-                <a
-                  href="/Agnihotri_cv.pdf"
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Download CV
-                </a>
-            </Button>
-            <Button variant="outline" size="lg" onClick={scrollToAbout}>
-              Learn More
-              <ArrowDown className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
+                <div className="flex items-start gap-2">
+                  <Languages className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-muted-foreground text-xs">English (C2) • German (A2) • Hindi (Native)</p>
+                  </div>
+                </div>
+              </div>
 
-          <div className="flex justify-center space-x-6 animate-fade-in-up">
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com/kavyagnihotri" target="_blank" rel="noopener noreferrer">
-                <Github className="h-6 w-6" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://www.linkedin.com/in/kavyagnihotri/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:kavyagnihotri17@gmail.com">
-                <Mail className="h-6 w-6" />
-              </a>
-            </Button>
-          </div>
+              {/* Social Links */}
+              <div className="pt-3 pb-3 border-b flex gap-2">
+                <Button variant="outline" size="sm" asChild className="flex-1">
+                  <a href="https://github.com/kavyagnihotri" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <Github className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild className="flex-1">
+                  <a href="https://www.linkedin.com/in/kavyagnihotri/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild className="flex-1">
+                  <a href="mailto:kavyagnihotri17@gmail.com" aria-label="Email">
+                    <Mail className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+
+              {/* CV Download */}
+              <div className="pt-3">
+                <Button className="w-full" size="sm" asChild>
+                  <a href="/cv/Agnihotri_CV.pdf" target="_blank" rel="noopener noreferrer">
+                    View CV
+                  </a>
+                </Button>
+              </div>
+            </Card>
+          </aside>
+
+          {/* Main content - Name and Introduction */}
+          <main className="space-y-2">
+            <div className="border-b pb-2">
+              <h1 className="text-4xl md:text-5xl font-bold mb-1 text-foreground">
+                Kavyanjali Agnihotri
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Machine Learning Engineer & Researcher
+              </p>
+            </div>
+
+            <div className="space-y-1.5 text-base leading-relaxed">
+              <p className="text-foreground">
+                I am a Master's student in Machine Learning at the University of Tübingen, 
+                with a strong foundation in Computer Science from BITS Pilani. My research 
+                interests lie at the intersection of <strong>Deep Learning</strong>, <strong>Natural 
+                Language Processing</strong>, and <strong>Large Language Models</strong>. I'm passionate about bridging theoretical 
+                advances in AI with practical applications that make a real-world impact.
+              </p>
+{/*               
+              <p className="text-foreground">
+                Through my work at organizations like Cisco and various research projects, 
+                I've developed expertise in building scalable ML systems and implementing 
+                state-of-the-art algorithms. I'm passionate about bridging theoretical 
+                advances in AI with practical applications that make a real-world impact.
+              </p> */}
+
+              <p className="text-foreground">
+                When I'm not immersed in research or coding, you'll find me exploring new 
+                books, experimenting with baking, or diving into the fascinating world of 
+                psychology and human behavior.
+              </p>
+            </div>
+
+            {/* Research Interests */}
+            <div className="pt-1">
+              <h2 className="text-xl font-semibold mb-1.5 text-foreground">Research Interests</h2>
+              <div className="flex flex-wrap gap-2">
+                {['NLP', 'LLMs', 'AI Alignment and Safety',
+                   'Human-Computer Interaction'].map((interest) => (
+                  <span 
+                    key={interest}
+                    className="px-3 py-1 bg-muted border border-border rounded text-sm hover:bg-muted/80 transition-colors"
+                  >
+                    {interest}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </main>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
-        <ArrowDown className="h-6 w-6 text-muted-foreground" />
       </div>
     </section>
   );

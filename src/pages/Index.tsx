@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { About } from '@/components/About';
 import { Education } from '@/components/Education';
 import { Experience } from '@/components/Experience';
 import { Projects } from '@/components/Projects';
@@ -12,9 +11,6 @@ import { Hobbies } from '@/components/Hobbies';
 import { Volunteering } from '@/components/Volunteering';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
-import { ThemeSelector } from '@/components/ThemeSelector';
-import { ThemeDecorations } from '@/components/ThemeDecorations';
-import { ScrollProgressAnimation } from '@/components/ScrollProgressAnimation';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +18,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -31,8 +27,8 @@ const Index = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading...</p>
+          <div className="w-12 h-12 border-3 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+          <p className="text-muted-foreground text-sm">Loading...</p>
         </div>
       </div>
     );
@@ -40,23 +36,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <ThemeSelector />
       <Header />
-      <div className="relative">
-        <ThemeDecorations />
+      <main>
         <Hero />
-        <About />
         <Education />
         <Experience />
-        <Projects />
-        <Skills />
+        {/* <Projects /> */}
+        {/* <Skills /> */}
         <Achievements />
         <Hobbies />
         <Volunteering />
         <Contact />
-        <Footer />
-      </div>
-      <ScrollProgressAnimation />
+      </main>
+      <Footer />
     </div>
   );
 };

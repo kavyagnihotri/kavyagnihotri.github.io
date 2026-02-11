@@ -1,0 +1,38 @@
+/* TEAM */
+Name: Kavyanjali Agnihotri
+Role: Machine Learning Engineer & Researcher
+Contact: kavyagnihotri17@gmail.com
+Location: Tübingen, Germany
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript, TypeScript
+Components: React, Vite, TailwindCSS, shadcn/ui
+Software: VS Code
+
+/* ABOUT */
+This is the personal portfolio website of Kavyanjali Agnihotri, a Master's student 
+in Machine Learning at the University of Tübingen. The site showcases education, 
+professional experience, achievements, and research interests in Deep Learning, 
+Natural Language Processing, and Large Language Models.
+
+Education:
+- M.Sc. Machine Learning, University of Tübingen (2024-2026)
+- B.E. Computer Science, BITS Pilani (2020-2024)
+
+Experience:
+- Student Assistant at Scholar Inbox, University of Tübingen
+- Technical Intern at Cisco Systems
+- NLP Research Intern at Palmtree Infotech
+
+Research Interests:
+- Deep Learning
+- Natural Language Processing  
+- Large Language Models
+- Machine Learning Systems
+- AI Ethics
+- Human-Computer Interaction
+
+/* THANKS */
+Built with React, Vite, and modern web technologies.
+Icons from Lucide React.
+UI components from shadcn/ui.

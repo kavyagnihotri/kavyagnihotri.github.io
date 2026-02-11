@@ -1,54 +1,27 @@
-
-import { Card, CardContent } from '@/components/ui/card';
-import { ChefHat, Waves, Palette, Dumbbell } from 'lucide-react';
+import { ChefHat, Waves, Palette, Dumbbell, BookOpen, Brain } from 'lucide-react';
 
 export const Hobbies = () => {
   const hobbies = [
-    {
-      name: 'Baking',
-      icon: <ChefHat className="h-8 w-8" />,
-      description: 'Passionate about creating delicious treats and experimenting with new recipes',
-      color: 'bg-orange-500/10 text-orange-600'
-    },
-    {
-      name: 'Swimming',
-      icon: <Waves className="h-8 w-8" />,
-      description: 'Enjoy the mental and physical benefits of this full-body workout',
-      color: 'bg-blue-500/10 text-blue-600'
-    },
-    {
-      name: 'Painting',
-      icon: <Palette className="h-8 w-8" />,
-      description: 'Creative expression through different painting techniques',
-      color: 'bg-purple-500/10 text-purple-600'
-    },
-    {
-      name: 'Light Exercising',
-      icon: <Dumbbell className="h-8 w-8" />,
-      description: 'Maintaining physical fitness through regular light exercise and wellness routines',
-      color: 'bg-green-500/10 text-green-600'
-    }
+    { name: 'Baking', icon: <ChefHat className="h-5 w-5" />, color: 'bg-orange-500/10 text-orange-600' },
+    { name: 'Swimming', icon: <Waves className="h-5 w-5" />, color: 'bg-blue-500/10 text-blue-600' },
+    { name: 'Painting', icon: <Palette className="h-5 w-5" />, color: 'bg-purple-500/10 text-purple-600' },
+    { name: 'Light Exercising', icon: <Dumbbell className="h-5 w-5" />, color: 'bg-green-500/10 text-green-600' },
+    { name: 'Reading', icon: <BookOpen className="h-5 w-5" />, color: 'bg-indigo-500/10 text-indigo-600' },
+    { name: 'Psychology', icon: <Brain className="h-5 w-5" />, color: 'bg-pink-500/10 text-pink-600' },
   ];
 
   return (
-    <section id="hobbies" className="section-padding bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Hobbies & Interests</h2>
-          <p className="text-xl text-muted-foreground">What I enjoy doing in my free time</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="hobbies" className="section-padding">
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Interests & Hobbies</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {hobbies.map((hobby, index) => (
-            <Card key={index} className="card-hover text-center cute-border">
-              <CardContent className="p-6">
-                <div className={`inline-flex p-4 rounded-full ${hobby.color} mb-4`}>
-                  {hobby.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{hobby.name}</h3>
-                <p className="text-muted-foreground text-sm">{hobby.description}</p>
-              </CardContent>
-            </Card>
+            <div key={index} className="flex items-center gap-3">
+              <div className={`p-2.5 rounded-lg ${hobby.color} flex-shrink-0`}>
+                {hobby.icon}
+              </div>
+              <span className="text-base font-medium text-foreground">{hobby.name}</span>
+            </div>
           ))}
         </div>
       </div>

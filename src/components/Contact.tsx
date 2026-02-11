@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -86,31 +85,31 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground">
-            Let's connect and discuss opportunities, collaborations, or just have a chat!
-          </p>
-        </div>
+    <section id="contact" className="section-padding">
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <h2 className="text-2xl font-bold mb-3 text-foreground">Get In Touch</h2>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-4">
+              <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
+              <div className="space-y-2">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-lg text-primary">
-                      {info.icon}
+                  <div key={index} className="flex flex-col gap-0.5">
+                    <div className="flex items-center gap-2">
+                      <div className="bg-primary/10 p-1.5 rounded-lg text-primary flex-shrink-0">
+                        <div className="scale-75">{info.icon}</div>
+                      </div>
+                      <p className="font-medium text-sm leading-tight">{info.title}</p>
                     </div>
-                    <div>
-                      <p className="font-medium">{info.title}</p>
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 flex-shrink-0 opacity-0">
+                        <div className="scale-75">{info.icon}</div>
+                      </div>
                       <a 
                         href={info.href} 
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors break-words leading-tight"
                         target={info.href.startsWith('http') ? '_blank' : undefined}
                         rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       >
@@ -127,7 +126,6 @@ export const Contact = () => {
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Full-time opportunities in ML/AI</li>
                 <li>• Research contributions</li>
-                {/* <li>• Open source contributions</li> */}
               </ul>
             </div>
           </div>

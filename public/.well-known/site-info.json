@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "site_type": "personal_portfolio",
+  "owner": {
+    "name": "Kavyanjali Agnihotri",
+    "role": "Machine Learning Engineer & Researcher",
+    "email": "kavyagnihotri17@gmail.com",
+    "location": "Tübingen, Germany",
+    "profiles": {
+      "github": "https://github.com/kavyagnihotri",
+      "linkedin": "https://www.linkedin.com/in/kavyagnihotri/"
+    }
+  },
+  "education": [
+    {
+      "degree": "Master of Science in Machine Learning",
+      "institution": "Eberhard Karls University of Tübingen",
+      "location": "Tübingen, Germany",
+      "period": "2024 - 2026 (Expected)"
+    },
+    {
+      "degree": "Bachelor of Engineering in Computer Science",
+      "institution": "Birla Institute of Technology & Science (BITS), Pilani",
+      "location": "Hyderabad, India",
+      "period": "2020 - 2024", 
+      "grade": "8.49/10 (German Equivalent = ~1.8)" 
+    }
+  ],
+  "experience": [
+    {
+      "title": "Student Assistant",
+      "company": "Scholar Inbox • Eberhard Karls University of Tübingen",
+      "location": "Tübingen, Germany",
+      "period": "December 2024 to Present"
+    },
+    {
+      "title": "Technical Intern",
+      "company": "Cisco Systems",
+      "location": "Bengaluru, India",
+      "period": "January 2024 to June 2024, June 2023 to July 2023"
+    },
+    {
+      "title": "NLP Research Intern",
+      "company": "Palmtree Infotech",
+      "location": "Chennai, India (Remote)",
+      "period": "May 2022 to July 2022"
+    }
+  ],
+  "research_interests": [
+    "Deep Learning",
+    "Natural Language Processing",
+    "Large Language Models",
+    "Machine Learning Systems",
+    "AI Ethics",
+    "Human-Computer Interaction"
+  ],
+  "skills": {
+    "programming_languages": ["Python", "Java", "C++", "JavaScript", "C", "SQL"],
+    "machine_learning": ["PyTorch", "TensorFlow", "Scikit-learn", "NLTK", "Transformers"],
+    "web_technologies": ["React", "Node.js", "Express.js", "MongoDB", "Django", "PostgreSQL"],
+    "tools": ["Docker", "Jenkins", "Git", "Azure AI Services"]
+  },
+  "achievements": [
+    {
+      "title": "ELIZA Stipend",
+      "organization": "DAAD Zuse School ELIZA",
+      "year": "2024 - 2026"
+    },
+    {
+      "title": "AI Incubator Batch 6 Selection",
+      "organization": "Cyber Valley, Tübingen",
+      "year": "2025"
+    },
+    {
+      "title": "Code for Good Hackathon Finalist",
+      "organization": "JPMorgan Chase & Co",
+      "year": "2023"
+    },
+    {
+      "title": "Google Girl Hackathon - Top 2.5%",
+      "organization": "Google",
+      "year": "2023"
+    }
+  ],
+  "content_sections": [
+    "education",
+    "experience",
+    "achievements",
+    "hobbies",
+    "volunteering",
+    "contact"
+  ],
+  "last_updated": "2026-02-11"
+}

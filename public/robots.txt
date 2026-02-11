@@ -10,5 +10,15 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+# Portfolio website of Kavyanjali Agnihotri
+# Machine Learning Engineer & Researcher
+
 User-agent: *
 Allow: /
+
+# Enhanced discoverability for AI agents and LLMs
+# Site information available at:
+# - /humans.txt - Human-readable site information
+# - /.well-known/site-info.json - Structured site metadata
+
+Sitemap: https://kavyagnihotri.github.io/sitemap.xml

@@ -1,9 +1,12 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Code, Brain, Database, Search, Image, Cpu, Users } from 'lucide-react';
+import { useState } from 'react';
 
 export const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
   const projects = [
     {
       title: 'Generating Lecture Notes',
@@ -105,59 +108,61 @@ export const Projects = () => {
     'AI/Accessibility': 'bg-indigo-500/10 text-indigo-600'
   };
 
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <section id="projects" className="section-padding">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Projects</h2>
-          <p className="text-xl text-muted-foreground">Showcasing my technical experiments and experience</p>
-        </div>
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <h2 className="text-2xl font-bold mb-2 text-foreground">Projects</h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="card-hover h-full cute-border">
-              <CardContent className="p-6 h-full flex flex-col">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="bg-primary/10 p-3 rounded-lg text-primary">
-                    {project.icon}
-                  </div>
-                  <Badge className={categoryColors[project.category as keyof typeof categoryColors]}>
+        <div className="space-y-8">
+          {displayedProjects.map((project, index) => (
+            <div key={index}>
+              <div className="flex items-baseline justify-between mb-0.5">
+                <div className="flex items-baseline gap-3">
+                  <h3 className="text-lg font-semibold">{project.title}</h3>
+                  <Badge variant="outline" className="text-xs">
                     {project.category}
                   </Badge>
                 </div>
+                <p className="text-sm text-muted-foreground">{project.timeline}</p>
+              </div>
+              
+              <p className="text-muted-foreground mb-2 leading-relaxed">{project.description}</p>
 
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{project.timeline}</p>
-                <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
+              <ul className="space-y-1 ml-4 mb-2">
+                {project.features.map((feature, i) => (
+                  <li key={i} className="flex items-start text-sm">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-muted-foreground leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
 
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {project.features.map((feature, i) => (
-                        <li key={i} className="flex items-start text-sm">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></div>
-                          <span className="text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold mb-2">Technologies:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+              <div className="mt-4">
+                <div className="flex flex-wrap gap-1.5">
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="secondary" className="text-xs font-normal">
+                      {tech}
+                    </Badge>
+                  ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
+        
+        {projects.length > 3 && (
+          <div className="mt-4 text-center">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowAll(!showAll)}
+              className="text-sm"
+            >
+              {showAll ? 'Show Less' : `Show ${projects.length - 3} More`}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
