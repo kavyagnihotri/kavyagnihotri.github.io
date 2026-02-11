@@ -50,22 +50,19 @@ export const Achievements = () => {
     <section id="achievements" className="section-padding">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <h2 className="text-2xl font-bold mb-3 text-foreground">Achievements</h2>
-
         <div className="grid md:grid-cols-2 gap-3">
           {achievements.map((achievement, index) => (
-            <div key={index} className="flex flex-col gap-0.5">
+            <div key={index} className="flex gap-3">
               <div className="flex items-center gap-2">
-                <div className={`p-2.5 rounded-lg ${achievement.color} flex-shrink-0`}>
-                  <div className="scale-75">{achievement.icon}</div>
+                <div className={`p-5 rounded-lg ${achievement.color} flex-shrink-0`}>
+                  <div>{achievement.icon}</div>
                 </div>
-                <h3 className="text-base font-semibold leading-tight flex-1">{achievement.title}</h3>
-                <span className="text-xs text-muted-foreground whitespace-nowrap">{achievement.year}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="p-1.5 flex-shrink-0 opacity-0">
-                  <div className="scale-75">{achievement.icon}</div>
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-base font-semibold leading-tight flex-1">{achievement.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-none">
+                  {achievement.organization} <span className="text-foreground">•</span> {achievement.year}
+                </p>
                 </div>
-                <p className="text-sm text-muted-foreground">{achievement.organization}</p>
               </div>
             </div>
           ))}

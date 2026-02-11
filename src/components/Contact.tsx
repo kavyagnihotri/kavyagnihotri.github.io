@@ -95,23 +95,25 @@ export const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
               <div className="space-y-2">
+
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex flex-col gap-0.5">
-                    <div className="flex items-center gap-2">
-                      <div className="bg-primary/10 p-1.5 rounded-lg text-primary flex-shrink-0">
-                        <div className="scale-75">{info.icon}</div>
+                  <div key={index} className="flex items-stretch gap-3">
+                    <div className="bg-primary/10 rounded-lg text-primary flex items-center justify-center w-10 shrink-0">
+                      <div className="w-5 h-5 flex items-center justify-center">
+                        {info.icon}
                       </div>
-                      <p className="font-medium text-sm leading-tight">{info.title}</p>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="p-1.5 flex-shrink-0 opacity-0">
-                        <div className="scale-75">{info.icon}</div>
-                      </div>
+
+                    {/* Text Container: This defines the height that the icon box will match */}
+                    <div className="flex flex-col justify-center py-1 ">
+                      <span className="font-medium text-sm leading-tight text-foreground">
+                        {info.title}
+                      </span>
                       <a 
                         href={info.href} 
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors break-words leading-tight"
                         target={info.href.startsWith('http') ? '_blank' : undefined}
                         rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-muted-foreground text-sm hover:text-primary transition-colors break-words leading-tight"
                       >
                         {info.value}
                       </a>
@@ -121,8 +123,8 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-lg p-6 shadow-sm cute-border">
-              <h4 className="font-semibold mb-3">I'm interested in:</h4>
+            <div>
+              <h3 className="text-2xl font-semibold mb-4">I'm interested in:</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Full-time opportunities in ML/AI</li>
                 <li>• Research contributions</li>
@@ -132,7 +134,7 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <Card className="card-hover cute-border">
-            <CardContent className="p-8">
+            <CardContent>
               <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
