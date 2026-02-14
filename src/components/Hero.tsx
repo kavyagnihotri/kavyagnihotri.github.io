@@ -65,7 +65,7 @@ export const Hero = () => {
                 </Button>
               </div>
 
-              {/* CV Download */}
+              {/* CV */}
               <div className="pt-3">
                 <Button className="w-full" size="sm" asChild>
                   <a href="/cv/Agnihotri_CV.pdf" target="_blank" rel="noopener noreferrer">
@@ -88,22 +88,18 @@ export const Hero = () => {
             </div>
 
             <div className="space-y-1.5 text-base leading-relaxed">
-              <p className="text-foreground">
-                I am a Master's student in Machine Learning at the University of Tübingen, 
-                with a strong foundation in Computer Science from BITS Pilani. My research 
-                interests lie at the intersection of <strong>Deep Learning</strong>, <strong>Natural 
-                Language Processing</strong>, and <strong>Large Language Models</strong>. I'm passionate about bridging theoretical 
+              <p className="text-foreground text-justify">
+                Hi there! I am a Master's student in Machine Learning at the 
+                <a href='https://uni-tuebingen.de/'>University of Tübingen</a>, Germany. 
+                I completed my undergraduate in Computer Science from 
+                <a href='https://www.bits-pilani.ac.in/hyderabad/'>BITS Pilani, Hyderabad</a>. 
+                My research interests lie at the intersection of <strong>Natural Language Processing</strong>
+                , <strong>AI Safety</strong>, and <strong>Large Language Models</strong>. 
+                I'm passionate about bridging theoretical 
                 advances in AI with practical applications that make a real-world impact.
               </p>
-{/*               
-              <p className="text-foreground">
-                Through my work at organizations like Cisco and various research projects, 
-                I've developed expertise in building scalable ML systems and implementing 
-                state-of-the-art algorithms. I'm passionate about bridging theoretical 
-                advances in AI with practical applications that make a real-world impact.
-              </p> */}
 
-              <p className="text-foreground">
+              <p className="text-foreground text-justify">
                 When I'm not immersed in research or coding, you'll find me exploring new 
                 books, experimenting with baking, or diving into the fascinating world of 
                 psychology and human behavior.
