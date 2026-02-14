@@ -89,10 +89,10 @@ export const Hero = () => {
 
             <div className="space-y-1.5 text-base leading-relaxed">
               <p className="text-foreground text-justify">
-                Hi there! I am a Master's student in Machine Learning at the 
-                <a href='https://uni-tuebingen.de/'>University of Tübingen</a>, Germany. 
-                I completed my undergraduate in Computer Science from 
-                <a href='https://www.bits-pilani.ac.in/hyderabad/'>BITS Pilani, Hyderabad</a>. 
+                Hi there! I am a Master's student in Machine Learning at 
+                the <a href='https://uni-tuebingen.de/'>University of Tübingen</a>, Germany. 
+                I completed my undergraduate in Computer Science 
+                from <a href='https://www.bits-pilani.ac.in/hyderabad/'>BITS Pilani, Hyderabad</a>. 
                 My research interests lie at the intersection of <strong>Natural Language Processing</strong>
                 , <strong>AI Safety</strong>, and <strong>Large Language Models</strong>. 
                 I'm passionate about bridging theoretical 
