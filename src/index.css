@@ -259,8 +259,9 @@
     @apply transition-all duration-200 hover:shadow-md hover:border-primary/30;
   }
   
+  /* Vertical only: horizontal padding comes from each section's container */
   .section-padding {
-    @apply py-2 px-4 md:px-8;
+    @apply py-2;
   }
 
   .academic-section {

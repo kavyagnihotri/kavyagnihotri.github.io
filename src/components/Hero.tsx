@@ -41,7 +41,7 @@ export const Hero = () => {
                 <div className="flex items-start gap-2">
                   <Languages className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-muted-foreground text-xs">English (C2) • German (A2) • Hindi (Native)</p>
+                    <p className="text-muted-foreground text-xs">English (Fluent) • German (A2/B1) • Hindi (Native)</p>
                   </div>
                 </div>
               </div>

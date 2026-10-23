@@ -26,8 +26,8 @@ export const Volunteering = () => {
   ];
 
   return (
-    <section id="volunteering" className="py-4">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section id="volunteering" className="section-padding">
+      <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <h2 className="text-2xl font-bold mb-6 text-foreground">Volunteering</h2>
         <div className="grid md:grid-cols-2 gap-3">
           {experiences.map((experience, index) => (
