@@ -1,6 +1,6 @@
 /* TEAM */
 Name: Kavyanjali Agnihotri
-Role: Machine Learning Engineer & Researcher
+Role: Machine Learning Researcher & Engineer
 Contact: kavyagnihotri17@gmail.com
 Location: Tübingen, Germany
 

@@ -8,7 +8,8 @@
     "location": "Tübingen, Germany",
     "profiles": {
       "github": "https://github.com/kavyagnihotri",
-      "linkedin": "https://www.linkedin.com/in/kavyagnihotri/"
+      "linkedin": "https://www.linkedin.com/in/kavyagnihotri/",
+      "google_scholar": "https://scholar.google.com/citations?user=6kDjcb4AAAAJ&hl=en"
     }
   },
   "education": [
@@ -16,13 +17,13 @@
       "degree": "Master of Science in Machine Learning",
       "institution": "Eberhard Karls University of Tübingen",
       "location": "Tübingen, Germany",
-      "period": "2024 - 2026 (Expected)"
+      "period": "Oct 2024 - March 2027 (Expected)"
     },
     {
       "degree": "Bachelor of Engineering in Computer Science",
       "institution": "Birla Institute of Technology & Science (BITS), Pilani",
       "location": "Hyderabad, India",
-      "period": "2020 - 2024", 
+      "period": "Nov 2020 - July 2024",
       "grade": "8.49/10 (German Equivalent = ~1.8)" 
     }
   ],

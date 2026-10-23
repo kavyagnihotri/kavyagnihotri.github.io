@@ -1,6 +1,5 @@
 
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Linkedin, Mail, GraduationCap } from 'lucide-react';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,6 +18,9 @@ export const Footer = () => {
             </a>
             <a href="https://www.linkedin.com/in/kavyagnihotri/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="LinkedIn">
               <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="https://scholar.google.com/citations?user=6kDjcb4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" aria-label="Google Scholar">
+              <GraduationCap className="h-4 w-4" />
             </a>
             <a href="mailto:kavyagnihotri17@gmail.com" className="hover:text-primary transition-colors" aria-label="Email">
               <Mail className="h-4 w-4" />

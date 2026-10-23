@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Send } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -68,7 +68,7 @@ export const Contact = () => {
       icon: <MapPin className="h-6 w-6" />,
       title: 'Location',
       value: 'Tübingen, Germany',
-      href: '#'
+      href: null
     },
     {
       icon: <Github className="h-6 w-6" />,
@@ -109,14 +109,20 @@ export const Contact = () => {
                       <span className="font-medium text-sm leading-tight text-foreground">
                         {info.title}
                       </span>
-                      <a 
-                        href={info.href} 
-                        target={info.href.startsWith('http') ? '_blank' : undefined}
-                        rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        className="text-muted-foreground text-sm hover:text-primary transition-colors break-words leading-tight"
-                      >
-                        {info.value}
-                      </a>
+                      {info.href ? (
+                        <a
+                          href={info.href}
+                          target={info.href.startsWith('http') ? '_blank' : undefined}
+                          rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-muted-foreground text-sm hover:text-primary transition-colors break-words leading-tight"
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <span className="text-muted-foreground text-sm break-words leading-tight">
+                          {info.value}
+                        </span>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -139,8 +145,9 @@ export const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Name</label>
+                    <label htmlFor="contact-name" className="block text-sm font-medium mb-2">Name</label>
                     <Input
+                      id="contact-name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -149,8 +156,9 @@ export const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
+                    <label htmlFor="contact-email" className="block text-sm font-medium mb-2">Email</label>
                     <Input
+                      id="contact-email"
                       name="email"
                       type="email"
                       value={formData.email}
@@ -162,8 +170,9 @@ export const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Subject</label>
+                  <label htmlFor="contact-subject" className="block text-sm font-medium mb-2">Subject</label>
                   <Input
+                    id="contact-subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
@@ -173,8 +182,9 @@ export const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
+                  <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Message</label>
                   <Textarea
+                    id="contact-message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}

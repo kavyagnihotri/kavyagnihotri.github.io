@@ -31,8 +31,8 @@ export const Achievements = () => {
       color: 'bg-green-500/10 text-green-600',
     },
     {
-      title: 'JEE Advanced 2020',
-      organization: 'National Testing Agency',
+      title: 'JEE Advanced 2020 - AIR 4,860 (Top 3.2%)',
+      organization: 'Joint Admission Board, IITs',
       year: '2020',
       icon: <Target className="h-5 w-5" />,
       color: 'bg-orange-500/10 text-orange-600',

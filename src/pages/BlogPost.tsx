@@ -6,8 +6,48 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Calendar, Clock, AlertCircle } from 'lucide-react';
-import matter from 'gray-matter';
 import { marked } from 'marked';
+import { formatDate } from '@/lib/utils';
+
+type FrontMatter = Record<string, string | string[]>;
+
+/**
+ * Splits a markdown file into its YAML frontmatter and body.
+ *
+ * Supports the simple frontmatter used by the blog posts: `key: value`,
+ * quoted values, inline lists (`tags: [a, b]`) and block lists (`- a`).
+ * gray-matter can't be used here because it depends on Node's Buffer.
+ */
+function parseFrontMatter(source: string): { data: FrontMatter; content: string } {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(source);
+  if (!match) return { data: {}, content: source };
+
+  const unquote = (value: string) => value.trim().replace(/^(['"])(.*)\1$/, '$2');
+  const data: FrontMatter = {};
+  let currentKey: string | null = null;
+
+  for (const line of match[1].split(/\r?\n/)) {
+    const listItem = /^\s*-\s+(.*)$/.exec(line);
+    if (listItem && currentKey) {
+      const existing = data[currentKey];
+      data[currentKey] = [...(Array.isArray(existing) ? existing : []), unquote(listItem[1])];
+      continue;
+    }
+
+    const pair = /^([\w-]+):\s*(.*)$/.exec(line);
+    if (!pair) continue;
+    const [, key, rawValue] = pair;
+    currentKey = key;
+    const value = rawValue.trim();
+    if (value.startsWith('[') && value.endsWith(']')) {
+      data[key] = value.slice(1, -1).split(',').map(unquote).filter(Boolean);
+    } else {
+      data[key] = unquote(value);
+    }
+  }
+
+  return { data, content: source.slice(match[0].length) };
+}
 
 /**
  * Blog Post Metadata Interface
@@ -59,19 +99,21 @@ const BlogPost = () => {
         const markdownContent = await response.text();
 
         // Parse frontmatter and content
-        const { data, content } = matter(markdownContent);
+        const { data, content } = parseFrontMatter(markdownContent);
+        const str = (value: string | string[] | undefined) =>
+          typeof value === 'string' && value ? value : undefined;
 
         // Convert markdown to HTML
         const htmlContent = await marked(content);
 
         // Set the post data
         setPost({
-          title: data.title || 'Untitled',
-          date: data.date || '',
+          title: str(data.title) || 'Untitled',
+          date: str(data.date) || '',
           content: htmlContent,
-          readTime: data.readTime,
-          tags: data.tags,
-          author: data.author,
+          readTime: str(data.readTime),
+          tags: Array.isArray(data.tags) ? data.tags : undefined,
+          author: str(data.author),
         });
         setError(null);
       } catch (err) {
@@ -83,68 +125,6 @@ const BlogPost = () => {
 
     loadBlogPost();
   }, [slug]);
-
-  /**
-   * Formats date for display
-   */
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
-  /**
-   * Simple markdown to HTML converter
-   */
-  const renderMarkdown = (content: string) => {
-    return content
-      .split('\n')
-      .map((line, index) => {
-        // Headers
-        if (line.startsWith('# ')) {
-          return <h1 key={index} className="text-3xl font-bold mt-8 mb-4">{line.slice(2)}</h1>;
-        }
-        if (line.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl font-semibold mt-6 mb-3">{line.slice(3)}</h2>;
-        }
-        if (line.startsWith('### ')) {
-          return <h3 key={index} className="text-xl font-semibold mt-4 mb-2">{line.slice(4)}</h3>;
-        }
-        
-        // Bold text
-        const boldPattern = /\*\*(.*?)\*\*/g;
-        const withBold = line.replace(boldPattern, '<strong>$1</strong>');
-        
-        // Lists
-        if (line.startsWith('- ')) {
-          return <li key={index} className="ml-4 mb-1">{line.slice(2)}</li>;
-        }
-        if (/^\d+\./.test(line)) {
-          return <li key={index} className="ml-4 mb-1 list-decimal">{line.replace(/^\d+\.\s/, '')}</li>;
-        }
-        
-        // Horizontal rule
-        if (line.trim() === '---') {
-          return <hr key={index} className="my-8 border-border" />;
-        }
-        
-        // Empty lines
-        if (line.trim() === '') {
-          return <br key={index} />;
-        }
-        
-        // Regular paragraphs
-        return (
-          <p 
-            key={index} 
-            className="mb-4 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: withBold }}
-          />
-        );
-      });
-  };
 
   if (loading) {
     return (
@@ -217,10 +197,12 @@ const BlogPost = () => {
             </h1>
             
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
-              <div className="flex items-center space-x-1">
-                <Calendar className="h-4 w-4" />
-                <span>{formatDate(post.date)}</span>
-              </div>
+              {post.date && (
+                <div className="flex items-center space-x-1">
+                  <Calendar className="h-4 w-4" />
+                  <span>{formatDate(post.date)}</span>
+                </div>
+              )}
               
               {post.readTime && (
                 <div className="flex items-center space-x-1">

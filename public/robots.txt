@@ -11,7 +11,7 @@ User-agent: facebookexternalhit
 Allow: /
 
 # Portfolio website of Kavyanjali Agnihotri
-# Machine Learning Engineer & Researcher
+# Machine Learning Researcher & Engineer
 
 User-agent: *
 Allow: /

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "The Great Wave off Kanagawa",
+    "artist": "Katsushika Hokusai",
+    "year": "c. 1831",
+    "url": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
+    "image": "/art/great-wave.jpg",
+    "added": "2026",
+    "thought": "The more I look at it, the more I find a new detail. It feels like meditating or being lost in deep thought, where each breath unveils something new."
+  },
+  {
+    "title": "Coalbrookdale by Night",
+    "artist": "Philip James de Loutherbourg",
+    "year": "1801",
+    "url": "https://en.wikipedia.org/wiki/Coalbrookdale_by_Night",
+    "image": "/art/coalbrookdale-by-night.jpg",
+    "added": "2026",
+    "thought": "Progress comes at a cost. The bright light at the centre of the painting makes you feel like you could get lost in it."
+  },
+  {
+    "title": "The Joy of Painting",
+    "artist": "Bob Ross",
+    "url": "https://en.wikipedia.org/wiki/Bob_Ross",
+    "thought": "I used to try to follow his painting lessons."
+  }
+]

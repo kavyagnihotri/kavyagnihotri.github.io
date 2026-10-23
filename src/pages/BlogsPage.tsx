@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, FileText, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { formatDate } from '@/lib/utils';
 
 /**
  * Blog Post Interface
@@ -80,17 +81,6 @@ const BlogsPage = () => {
     navigate(`/blogs/${slug}`);
   };
 
-  /**
-   * Formats date for display
-   */
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
@@ -154,10 +144,12 @@ const BlogsPage = () => {
                           {post.title}
                         </CardTitle>
                         <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                          <div className="flex items-center space-x-1">
-                            <Calendar className="h-4 w-4" />
-                            <span>{formatDate(post.date)}</span>
-                          </div>
+                          {post.date && (
+                            <div className="flex items-center space-x-1">
+                              <Calendar className="h-4 w-4" />
+                              <span>{formatDate(post.date)}</span>
+                            </div>
+                          )}
                           {post.readTime && (
                             <div className="flex items-center space-x-1">
                               <Clock className="h-4 w-4" />

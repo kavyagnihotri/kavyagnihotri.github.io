@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Award } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 
 export const Education = () => {
   const education = [
@@ -6,14 +6,14 @@ export const Education = () => {
       degree: 'Master of Science in Machine Learning',
       institution: 'Eberhard Karls University of Tübingen',
       location: 'Tübingen, Germany',
-      duration: '2024 - 2026 (Expected)',
+      duration: 'Oct 2024 - March 2027 (Expected)',
       gpa: null,
     },
     {
       degree: 'Bachelor of Engineering in Computer Science',
       institution: 'Birla Institute of Technology & Science (BITS), Pilani',
       location: 'Hyderabad, India',
-      duration: '2020 - 2024',
+      duration: 'Nov 2020 - July 2024',
       gpa: 'CGPA: 8.49/10 (German Grade: 1.8)',
     },
   ];

@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, FileText } from 'lucide-react';
+import { Menu, X, Home, FileText, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -25,6 +25,7 @@ export const Header = () => {
   // Check if we're on the main page or a separate page
   const isMainPage = location.pathname === '/';
   const isBlogsPage = location.pathname.startsWith('/blogs');
+  const isArtPage = location.pathname === '/art';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,6 +114,16 @@ export const Header = () => {
                   <span>Blogs</span>
                 </button>
               )}
+
+              {!isArtPage && (
+                <button
+                  onClick={() => navigateToPage('/art')}
+                  className="flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200"
+                >
+                  <Palette size={14} />
+                  <span>Art</span>
+                </button>
+              )}
             </div>
           </nav>
 
@@ -161,6 +172,16 @@ export const Header = () => {
                   >
                     <FileText size={16} />
                     <span>Blogs & Posts</span>
+                  </button>
+                )}
+
+                {!isArtPage && (
+                  <button
+                    onClick={() => navigateToPage('/art')}
+                    className="flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200"
+                  >
+                    <Palette size={16} />
+                    <span>Art</span>
                   </button>
                 )}
               </div>

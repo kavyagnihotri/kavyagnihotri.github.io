@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BlogsPage from "./pages/BlogsPage";
 import BlogPost from "./pages/BlogPost";
+import ArtPage from "./pages/ArtPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const queryClient = new QueryClient();
  * - "/" - Main portfolio page
  * - "/blogs" - Blog listing page
  * - "/blogs/:slug" - Individual blog post
+ * - "/art" - Artworks I like
  * - "*" - 404 page for unmatched routes
  */
 const App = () => (
@@ -39,6 +41,9 @@ const App = () => (
           {/* Blog pages - separate from main page sections */}
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
+
+          {/* Artworks I like */}
+          <Route path="/art" element={<ArtPage />} />
           
           {/* Catch-all route for 404 errors */}
           <Route path="*" element={<NotFound />} />

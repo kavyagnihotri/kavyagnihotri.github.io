@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 
 export const Hero = () => {
   return (
-    <section className="pt-20 pb-4">
+    <section id="about" className="pt-20 pb-4">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
         <div className="grid lg:grid-cols-[260px,1fr] gap-8 items-start">
           {/* Left sidebar - Profile Picture and Quick Info */}
@@ -59,6 +59,11 @@ export const Hero = () => {
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" asChild className="flex-1">
+                  <a href="https://scholar.google.com/citations?user=6kDjcb4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+                    <GraduationCap className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild className="flex-1">
                   <a href="mailto:kavyagnihotri17@gmail.com" aria-label="Email">
                     <Mail className="h-4 w-4" />
                   </a>
@@ -83,7 +88,7 @@ export const Hero = () => {
                 Kavyanjali Agnihotri
               </h1>
               <p className="text-xl text-muted-foreground">
-                Machine Learning Engineer & Researcher
+                Machine Learning Researcher & Engineer
               </p>
             </div>
 
