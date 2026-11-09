@@ -1,7 +1,42 @@
-import { Mic, Heart, Users } from 'lucide-react';
+import { Mic, Heart, Users, GraduationCap, BookOpen, Dribbble } from 'lucide-react';
 
 export const Volunteering = () => {
   const experiences = [
+    {
+      title: 'MLSS 2026 - Reliability and Safety',
+      organization: 'Machine Learning Summer School, Kraków',
+      duration: '2026',
+      icon: <GraduationCap size={20} />,
+      color: 'bg-emerald-500/10 text-emerald-600',
+    },
+    {
+      title: 'IICCSSS 2025',
+      organization: 'Interdisciplinary Computational Cognitive Science Summer School, Darmstadt',
+      duration: '2025',
+      icon: <GraduationCap size={20} />,
+      color: 'bg-teal-500/10 text-teal-600',
+    },
+    {
+      title: 'Volunteer',
+      organization: 'MLSS Tübingen',
+      duration: '2026',
+      icon: <Heart size={20} />,
+      color: 'bg-rose-500/10 text-rose-600',
+    },
+    {
+      title: 'Teaching Assistant, Human-Computer Interaction',
+      organization: 'BITS Pilani, Hyderabad',
+      duration: "During Bachelor's",
+      icon: <BookOpen size={20} />,
+      color: 'bg-amber-500/10 text-amber-600',
+    },
+    {
+      title: 'Varsity Basketball Team Member',
+      organization: 'BITS Pilani, Hyderabad',
+      duration: "During Bachelor's",
+      icon: <Dribbble size={20} />,
+      color: 'bg-orange-500/10 text-orange-600',
+    },
     {
       title: 'Speaker Research and Logistics Member',
       organization: 'TEDxBITSHYD',
@@ -28,7 +63,7 @@ export const Volunteering = () => {
   return (
     <section id="volunteering" className="section-padding">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-        <h2 className="text-2xl font-bold mb-6 text-foreground">Volunteering</h2>
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Volunteering & Summer Schools</h2>
         <div className="grid md:grid-cols-2 gap-3">
           {experiences.map((experience, index) => (
             <div key={index} className="flex gap-3">

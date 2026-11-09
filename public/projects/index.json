@@ -1,0 +1,139 @@
+[
+  {
+    "title": "Automated Defence Discovery against Prompt Injection",
+    "tag": "Master's thesis",
+    "period": "Jul 2026 – present",
+    "group": "Research",
+    "summary": "Prompt-injection defences are tested on fixed, old attacks, so they can look safe without being safe. Can an LLM agent find defences that still hold when the attack is searched again?",
+    "tech": [
+      "Python",
+      "PyTorch",
+      "torchtune",
+      "vLLM",
+      "LLM agents"
+    ]
+  },
+  {
+    "title": "Skill-File Injection in Open-Weight LLMs",
+    "tag": "Report",
+    "period": "Jun 2026",
+    "group": "Research",
+    "summary": "540 sandboxed agent evaluations across dense and MoE models (up to 122B parameters), measuring how malicious skill files steer coding agents.",
+    "tech": [
+      "Python",
+      "vLLM",
+      "OpenHands",
+      "Modal",
+      "Multi-GPU"
+    ]
+  },
+  {
+    "title": "Compositional Understanding in Stable Diffusion",
+    "period": "Sep 2025 – Mar 2026",
+    "group": "Research",
+    "summary": "Swapping SD3.5's CLIP-L text encoder for compositionally fine-tuned CLIC models to recover spatial reasoning without retraining the backbone.",
+    "tech": [
+      "SD3.5",
+      "CLIP",
+      "Qwen3-VL",
+      "Python"
+    ]
+  },
+  {
+    "title": "Workload Analysis of ML GPU Clusters",
+    "period": "Nov 2025 – Feb 2026",
+    "group": "Research",
+    "summary": "Team of 4 analysing 2.4M+ Slurm job records from two university ML clusters (A100, RTX 2080Ti, H100).",
+    "tech": [
+      "Python",
+      "Pandas",
+      "scikit-learn",
+      "Slurm"
+    ]
+  },
+  {
+    "title": "Reinforcement Learning for Air Hockey",
+    "period": "Jan – Feb 2026",
+    "group": "Research",
+    "summary": "TD3 agent reaching an 80% win rate against the environment's strong heuristic opponent.",
+    "tech": [
+      "Python",
+      "PyTorch",
+      "TD3"
+    ]
+  },
+  {
+    "title": "Generation of Scientific Lecture Notes",
+    "period": "Jan 2023 – Mar 2024",
+    "group": "Earlier work",
+    "summary": "Automatically builds structured lecture notes from Wikipedia using a prerequisite knowledge graph.",
+    "tech": [
+      "Python",
+      "BERT",
+      "BeautifulSoup",
+      "LDA"
+    ]
+  },
+  {
+    "title": "Neural Style Transfer",
+    "period": "Nov – Dec 2022",
+    "group": "Earlier work",
+    "summary": "VGG-based stylisation with a depth-preserving term added to the loss, for faster convergence and better-looking results.",
+    "tech": [
+      "Python",
+      "PyTorch",
+      "TensorFlow"
+    ]
+  },
+  {
+    "title": "Boolean Retrieval System & Page Ranking",
+    "period": "Mar – May 2022",
+    "group": "Earlier work",
+    "summary": "Boolean IR with spell correction and wildcard queries, plus PageRank (power iteration) and HITS.",
+    "tech": [
+      "Python",
+      "NLTK"
+    ]
+  },
+  {
+    "title": "ProSys",
+    "period": "Jan – Apr 2023",
+    "group": "Earlier work",
+    "summary": "MERN web platform for project proposals, approvals, submissions, grading and chat between admins, students and professors.",
+    "tech": [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js"
+    ]
+  },
+  {
+    "title": "Matrix Multiplication with OS Concepts",
+    "period": "Nov 2022",
+    "group": "Earlier work",
+    "summary": "Multi-threaded matrix multiplication, comparing FCFS, SJF and Round Robin scheduling on response, turnaround and waiting time.",
+    "tech": [
+      "C",
+      "Linux"
+    ]
+  },
+  {
+    "title": "Spatial Indexing with QuadTrees",
+    "period": "Feb 2022",
+    "group": "Earlier work",
+    "summary": "Geometric query processing with QuadTrees in C++, faster than the other indexing methods compared.",
+    "tech": [
+      "C++"
+    ]
+  },
+  {
+    "title": "Chatbot for Visually Impaired Students",
+    "period": "Nov 2023",
+    "group": "Earlier work",
+    "summary": "Simple multilingual chatbot with early-stage intent classification to assist visually impaired students.",
+    "tech": [
+      "Python",
+      "Microsoft AI tools"
+    ]
+  }
+]

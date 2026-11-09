@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, GraduationCap } from 'lucide-react';
 
 export const Footer = () => {
@@ -9,7 +10,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 md:px-8 py-6 max-w-7xl">
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
           <div>
-            <p>© {currentYear} Kavyanjali Agnihotri</p>
+            <p>© {currentYear} Kavyanjali Agnihotri · <Link to="/projects" className="hover:text-primary transition-colors">projects</Link></p>
           </div>
           
           <div className="flex items-center space-x-4">

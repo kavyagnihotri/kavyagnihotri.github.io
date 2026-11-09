@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Home, FileText, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 /**
@@ -124,6 +125,7 @@ export const Header = () => {
                   <span>Art</span>
                 </button>
               )}
+              <ThemeToggle />
             </div>
           </nav>
 
@@ -184,6 +186,7 @@ export const Header = () => {
                     <span>Art</span>
                   </button>
                 )}
+                <ThemeToggle className="!justify-start !p-0" />
               </div>
             </div>
           </nav>
