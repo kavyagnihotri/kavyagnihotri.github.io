@@ -48,7 +48,7 @@ const App = () => (
           {/* Artworks I like */}
           <Route path="/art" element={<ArtPage />} />
           
-          {/* Unlisted projects page (linked from footer only) */}
+          {/* Projects page */}
           <Route path="/projects" element={<ProjectsPage />} />
 
           {/* Catch-all route for 404 errors */}

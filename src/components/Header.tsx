@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, FileText, Palette } from 'lucide-react';
+import { Menu, X, Home, FileText, Palette, FolderGit2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -27,6 +27,7 @@ export const Header = () => {
   const isMainPage = location.pathname === '/';
   const isBlogsPage = location.pathname.startsWith('/blogs');
   const isArtPage = location.pathname === '/art';
+  const isProjectsPage = location.pathname === '/projects';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,7 +77,7 @@ export const Header = () => {
           {/* Logo/Name - Academic Pages style */}
           <button
             onClick={() => navigateToPage('/')}
-            className="text-xl font-semibold text-foreground hover:text-primary transition-colors"
+            className={`text-xl font-semibold text-foreground hover:text-primary transition-colors ${isMainPage ? 'text-primary font-medium' : ''}`}
           >
             Kavyanjali Agnihotri
           </button>
@@ -96,35 +97,36 @@ export const Header = () => {
             
             {/* Page navigation buttons */}
             <div className="flex items-center space-x-1 border-l ml-2 pl-2">
-              {!isMainPage && (
-                <button
+              <button
                   onClick={() => navigateToPage('/')}
-                  className="flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200"
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200 ${isMainPage ? 'text-primary font-medium' : ''}`}
                 >
                   <Home size={14} />
                   <span>Home</span>
                 </button>
-              )}
               
-              {!isBlogsPage && (
-                <button
+              <button
                   onClick={() => navigateToPage('/blogs')}
-                  className="flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200"
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200 ${isBlogsPage ? 'text-primary font-medium' : ''}`}
                 >
                   <FileText size={14} />
                   <span>Blogs</span>
                 </button>
-              )}
 
-              {!isArtPage && (
-                <button
+              <button
                   onClick={() => navigateToPage('/art')}
-                  className="flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200"
+                  className={`flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200 ${isArtPage ? 'text-primary font-medium' : ''}`}
                 >
                   <Palette size={14} />
                   <span>Art</span>
                 </button>
-              )}
+              <button
+                    onClick={() => navigateToPage('/projects')}
+                    className={`flex items-center space-x-1 px-3 py-2 text-sm text-foreground/80 hover:text-primary hover:bg-muted/50 rounded transition-colors duration-200 ${isProjectsPage ? 'text-primary font-medium' : ''}`}
+                  >
+                    <FolderGit2 size={14} />
+                    <span>Projects</span>
+                  </button>
               <ThemeToggle />
             </div>
           </nav>
@@ -157,35 +159,36 @@ export const Header = () => {
               
               {/* Page navigation - always show */}
               <div className="border-t pt-4 space-y-4">
-                {!isMainPage && (
-                  <button
+              <button
                     onClick={() => navigateToPage('/')}
-                    className="flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200"
+                    className={`flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200 ${isMainPage ? 'text-primary font-medium' : ''}`}
                   >
                     <Home size={16} />
                     <span>Home</span>
                   </button>
-                )}
                 
-                {!isBlogsPage && (
-                  <button
+              <button
                     onClick={() => navigateToPage('/blogs')}
-                    className="flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200"
+                    className={`flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200 ${isBlogsPage ? 'text-primary font-medium' : ''}`}
                   >
                     <FileText size={16} />
                     <span>Blogs & Posts</span>
                   </button>
-                )}
 
-                {!isArtPage && (
-                  <button
+              <button
                     onClick={() => navigateToPage('/art')}
-                    className="flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200"
+                    className={`flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200 ${isArtPage ? 'text-primary font-medium' : ''}`}
                   >
                     <Palette size={16} />
                     <span>Art</span>
                   </button>
-                )}
+              <button
+                    onClick={() => navigateToPage('/projects')}
+                    className={`flex items-center space-x-2 text-foreground/80 hover:text-primary transition-colors duration-200 ${isProjectsPage ? 'text-primary font-medium' : ''}`}
+                  >
+                    <FolderGit2 size={16} />
+                    <span>Projects</span>
+                  </button>
                 <ThemeToggle className="!justify-start !p-0" />
               </div>
             </div>

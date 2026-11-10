@@ -7,9 +7,9 @@ export const Hero = () => {
   return (
     <section id="about" className="pt-20 pb-4">
       <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-        <div className="grid lg:grid-cols-[260px,1fr] gap-8 items-start">
-          {/* Left sidebar - Profile Picture and Quick Info */}
-          <aside className="lg:sticky lg:top-24">
+        <div className="grid lg:grid-cols-[1fr,260px] gap-8 items-start">
+          {/* Right sidebar - Profile Picture and Quick Info */}
+          <aside className="lg:sticky lg:top-24 lg:order-2">
             <Card className="p-4 border shadow-sm">
               {/* Profile Picture */}
               <div className="mb-3">
@@ -82,7 +82,7 @@ export const Hero = () => {
           </aside>
 
           {/* Main content - Name and Introduction */}
-          <main className="space-y-2">
+          <main className="space-y-2 lg:order-1">
             <div className="border-b pb-2">
               <h1 className="text-4xl md:text-5xl font-bold mb-1 text-foreground">
                 Kavyanjali Agnihotri
